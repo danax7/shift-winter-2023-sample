@@ -1,0 +1,24 @@
+@import url(https://fonts.googleapis.com/css?family=Bodoni+Moda:regular,500,600,700,800,900,italic,500italic,600italic,700italic,800italic,900italic);
+
+
+:root {
+	--orange: #F6B716;
+	--orange-hover: #cc9711;
+	font-family: Inter;
+}
+
+#root {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+}
+
+.box {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+}

@@ -1,0 +1,18 @@
+.btn {
+	width: 135px;
+	height: 55px;
+	background-color: var(--orange);
+	color: white;
+	font-size: 16px;
+	font-weight: 600;
+	border-radius: 45px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: all .4s linear;
+}
+
+.btn:hover {
+	background-color: var(--orange-hover);
+}
