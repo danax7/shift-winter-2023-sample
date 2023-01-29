@@ -1,14 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Logo from '../Logo/Logo'
 import s from './s.module.css'
 
 const Header = () => {
 	return (
 		<header className={s.header}>
 			<Link to="/" >
-				<span className={s.logo}>
-					SANTORINIS
-				</span>
+				<Logo />
 			</Link>
 			<ul className={s.nav}>
 				<li className={s.link}>
