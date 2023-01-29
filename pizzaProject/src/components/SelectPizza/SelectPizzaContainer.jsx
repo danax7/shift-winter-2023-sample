@@ -6,7 +6,9 @@ import SelectPizza from "./SelectPizza";
 
 const mapStateToProps = (state) => {
 	return {
-		pizzas: state.selectPage.pizzas
+		pizzas: state.selectPage.pizzas,
+		categories: state.selectPage.categories,
+		currentCategory: state.selectPage.currentCategory
 	}
 }
 

@@ -5,7 +5,9 @@ import { GET_PIZZAS } from "../actionTypes"
 // }
 
 const initialState = {
-	pizzas: []
+	pizzas: [],
+	categories: ['Рекомендуем', 'Без мяса', 'Сладкая', 'Акции', 'Напитки'],
+	currentCategory: 'Рекомендуем'
 }
 
 const selectReducer = (state = initialState, action) => {

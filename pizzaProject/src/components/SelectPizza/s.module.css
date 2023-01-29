@@ -2,9 +2,18 @@
 	padding-top: 80px;
 	display: flex;
 	flex-direction: column;
-
+	min-height: 100%;
 }
 
 .content {
+	padding-bottom: 80px;
+
 	flex: 1 1 auto;
+	background-color: white;
+}
+
+h1 {
+	color: black;
+	font-size: 48px;
+	font-weight: 700;
 }
