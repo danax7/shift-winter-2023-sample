@@ -46,9 +46,12 @@
 	transition: all .4s linear;
 }
 
+
 .add:hover {
 	background-color: var(--orange);
 }
+
+
 
 .imgWrapper img {
 	max-width: 100%;

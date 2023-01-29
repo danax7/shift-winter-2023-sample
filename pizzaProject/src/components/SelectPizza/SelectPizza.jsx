@@ -10,7 +10,7 @@ import s from './s.module.css'
 // 	getPizzas: () => void
 // }
 
-const SelectPizza = ({ getPizzas, pizzas, categories, currentCategory, isLoaded }) => {
+const SelectPizza = ({ getPizzas, togglePizza, pizzas, categories, currentCategory, isLoaded, errorLoading, selectedPizzas }) => {
 
 	useEffect(() => {
 		if (!isLoaded) {
@@ -18,7 +18,11 @@ const SelectPizza = ({ getPizzas, pizzas, categories, currentCategory, isLoaded 
 		}
 	}, [])
 
-	const showPizzas = isLoaded ? <PizzaList pizzas={pizzas} /> : <div className={s.loading}>Подождите, пиццы уже в пути...</div>
+	const showLoading = <div className={s.loading}>Подождите, пиццы уже в пути...</div>
+	const showErrorLoading = <div className={s.loading}>Извините, проблема с сервером...</div>
+	const showPizzas = isLoaded ?
+		<PizzaList pizzas={pizzas} togglePizza={togglePizza} selectedPizzas={selectedPizzas} /> : errorLoading ? showErrorLoading : showLoading
+
 
 	return (
 		<div className={s.select}>

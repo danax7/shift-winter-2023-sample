@@ -2,7 +2,7 @@ import React from 'react'
 import add from '../../assets/add.svg'
 import s from './s.module.css'
 
-const PizzaCard = ({ pizza }) => {
+const PizzaCard = ({ pizza, isSelected, togglePizza }) => {
 	return (
 		<div className={s.card}>
 			<div className={s.content}>
@@ -17,7 +17,9 @@ const PizzaCard = ({ pizza }) => {
 			</div>
 			<div className={s.footer}>
 				<div className={s.price}>{pizza.price.default} ₽</div>
-				<div className={s.add}>
+				<div
+					onClick={() => togglePizza(pizza.id)}
+					className={[s.add, isSelected ? 'selected' : ''].join(' ')}>
 					<img src={add} alt='добавить в корзину' />
 				</div>
 			</div>

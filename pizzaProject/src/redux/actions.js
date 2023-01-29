@@ -1,4 +1,4 @@
-import { GET_PIZZAS, SET_PIZZA_LOADED } from "./actionTypes"
+import { GET_PIZZAS, SET_ERROR_GET, SET_PIZZA_LOADED, TOGGLE_PIZZA } from "./actionTypes"
 
 // export interface IAction<T> {
 // 	type: string,
@@ -7,6 +7,20 @@ import { GET_PIZZAS, SET_PIZZA_LOADED } from "./actionTypes"
 
 // export type AsyncAction = (dispatch: (action: IAction<IPizza[]>) => any) => void;
 
+export const setPizzas = (pizza) => ({
+	type: GET_PIZZAS,
+	payload: pizza
+})
+
+export const setLoaded = () => ({
+	type: SET_PIZZA_LOADED
+})
+
+export const setErrorGet = () => ({
+	type: SET_ERROR_GET
+
+})
+
 export const getPizzas = () => {
 
 	return (dispatch) => {
@@ -14,8 +28,14 @@ export const getPizzas = () => {
 		fetch('https://shift-winter-2023-backend.onrender.com/api/pizza')
 			.then(raw => raw.json())
 			.then(pizza => {
-				dispatch({ type: GET_PIZZAS, payload: pizza })
+				dispatch(setPizzas(pizza))
 			})
-			.finally(() => dispatch({ type: SET_PIZZA_LOADED }))
+			.catch((err) => dispatch(setError(err)))
+			.finally(() => dispatch(setLoaded()))
 	}
 }
+
+export const togglePizza = (id) => ({
+	type: TOGGLE_PIZZA,
+	payload: id
+})

@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { getPizzas } from "../../redux/actions";
+import { getPizzas, togglePizza } from "../../redux/actions";
 import SelectPizza from "./SelectPizza";
 
 
@@ -9,13 +9,16 @@ const mapStateToProps = (state) => {
 		pizzas: state.selectPage.pizzas,
 		categories: state.selectPage.categories,
 		currentCategory: state.selectPage.currentCategory,
-		isLoaded: state.selectPage.pizzasLoaded
+		isLoaded: state.selectPage.pizzasLoaded,
+		errorLoading: state.selectPage.errorLoading,
+		selectedPizzas: state.selectPage.selectedPizzas,
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		getPizzas: () => dispatch(getPizzas())
+		getPizzas: () => dispatch(getPizzas()),
+		togglePizza: (id) => dispatch(togglePizza(id))
 	}
 }
 
