@@ -1,3 +1,4 @@
 
 
 export const GET_PIZZAS = 'GET_PIZZAS'
+export const SET_PIZZA_LOADED = 'SET_PIZZA_LOADED'

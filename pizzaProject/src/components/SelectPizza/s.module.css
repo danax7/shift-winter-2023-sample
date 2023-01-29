@@ -17,3 +17,10 @@ h1 {
 	font-size: 48px;
 	font-weight: 700;
 }
+
+.loading {
+	font-weight: 600;
+	font-size: 18px;
+	color: black;
+	text-align: center;
+}

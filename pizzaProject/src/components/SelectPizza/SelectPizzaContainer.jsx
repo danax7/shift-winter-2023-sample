@@ -8,7 +8,8 @@ const mapStateToProps = (state) => {
 	return {
 		pizzas: state.selectPage.pizzas,
 		categories: state.selectPage.categories,
-		currentCategory: state.selectPage.currentCategory
+		currentCategory: state.selectPage.currentCategory,
+		isLoaded: state.selectPage.pizzasLoaded
 	}
 }
 

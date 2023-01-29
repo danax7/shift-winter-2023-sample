@@ -1,4 +1,4 @@
-import { GET_PIZZAS } from "../actionTypes"
+import { GET_PIZZAS, SET_PIZZA_LOADED } from "../actionTypes"
 
 // export interface ISelectState {
 // 	pizzas: IPizza[]
@@ -7,7 +7,8 @@ import { GET_PIZZAS } from "../actionTypes"
 const initialState = {
 	pizzas: [],
 	categories: ['Рекомендуем', 'Без мяса', 'Сладкая', 'Акции', 'Напитки'],
-	currentCategory: 'Рекомендуем'
+	currentCategory: 'Рекомендуем',
+	pizzasLoaded: false
 }
 
 const selectReducer = (state = initialState, action) => {
@@ -18,6 +19,12 @@ const selectReducer = (state = initialState, action) => {
 			return {
 				...state,
 				pizzas: action.payload
+			}
+		case SET_PIZZA_LOADED:
+
+			return {
+				...state,
+				pizzasLoaded: true
 			}
 
 		default:

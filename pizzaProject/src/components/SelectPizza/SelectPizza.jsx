@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Categories from '../ Categories/Categories'
 import Footer from '../Footer/Footer'
 import PizzaList from '../PizzaList/PizzaList'
+import preloader from '../../assets/preloader.gif'
 import s from './s.module.css'
 
 // interface ISelectPizzaProps {
@@ -9,11 +10,15 @@ import s from './s.module.css'
 // 	getPizzas: () => void
 // }
 
-const SelectPizza = ({ getPizzas, pizzas, categories, currentCategory }) => {
+const SelectPizza = ({ getPizzas, pizzas, categories, currentCategory, isLoaded }) => {
 
 	useEffect(() => {
-		getPizzas()
+		if (!isLoaded) {
+			getPizzas()
+		}
 	}, [])
+
+	const showPizzas = isLoaded ? <PizzaList pizzas={pizzas} /> : <div className={s.loading}>Подождите, пиццы уже в пути...</div>
 
 	return (
 		<div className={s.select}>
@@ -21,7 +26,7 @@ const SelectPizza = ({ getPizzas, pizzas, categories, currentCategory }) => {
 				<div className='box'>
 					<h1 className='title'>Выбрать пиццу</h1>
 					<Categories categories={categories} currentCategory={currentCategory} />
-					<PizzaList pizzas={pizzas} />
+					{showPizzas}
 				</div>
 			</div>
 			<Footer />
