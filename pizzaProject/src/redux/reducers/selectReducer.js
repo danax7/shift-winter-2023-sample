@@ -14,7 +14,6 @@ const initialState = {
 }
 
 const selectReducer = (state = initialState, action) => {
-	console.log(action);
 
 	switch (action.type) {
 		case GET_PIZZAS:
