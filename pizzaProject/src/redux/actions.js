@@ -1,4 +1,4 @@
-import { GET_PIZZAS, SET_ERROR_GET, SET_PIZZA_LOADED, SET_SINGLE_PIZZA, TOGGLE_PIZZA } from "./actionTypes"
+import { DECREASE_PIZZA_QUANTITY, GET_PIZZAS, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SET_ERROR_GET, SET_PIZZA_LOADED, SET_SINGLE_PIZZA, TOGGLE_PIZZA } from "./actionTypes"
 
 // export interface IAction<T> {
 // 	type: string,
@@ -6,6 +6,13 @@ import { GET_PIZZAS, SET_ERROR_GET, SET_PIZZA_LOADED, SET_SINGLE_PIZZA, TOGGLE_P
 // }
 
 // export type AsyncAction = (dispatch: (action: IAction<IPizza[]>) => any) => void;
+
+
+// todo select page
+
+
+
+// fetch all pizzas
 
 export const setPizzas = (pizza) => ({
 	type: GET_PIZZAS,
@@ -33,10 +40,14 @@ export const getPizzas = () => {
 	}
 }
 
+//
+
 export const togglePizza = (id) => ({
 	type: TOGGLE_PIZZA,
 	payload: id
 })
+
+//fetch single pizza ----------
 
 export const setSinglePizza = (pizza) => ({
 	type: SET_SINGLE_PIZZA,
@@ -53,3 +64,22 @@ export const getSinglePizza = (id) => {
 			})
 	}
 }
+
+
+// todo order page
+
+
+export const increasePizzaQuantity = (id) => ({
+	type: INCREASE_PIZZA_QUANTITY,
+	payload: id
+})
+
+export const decreasePizzaQuantity = (id) => ({
+	type: DECREASE_PIZZA_QUANTITY,
+	payload: id
+})
+
+export const removePizzaOrder = (id) => ({
+	type: REMOVE_PIZZA_ORDER,
+	payload: id
+})

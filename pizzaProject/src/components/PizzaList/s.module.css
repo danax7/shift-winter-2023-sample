@@ -67,25 +67,9 @@
 	width: 100%;
 }
 
-.name {
-	font-weight: 600;
-	font-size: 18px;
-
-}
-
-.size {
-	font-size: 12px;
-}
 
 .ingredients {
 	font-size: 12px;
 	margin-top: 12px;
 	line-height: 140%;
-}
-
-
-.price {
-	font-weight: 300;
-	font-size: 24px;
-	color: #121146;
 }

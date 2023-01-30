@@ -34,3 +34,22 @@ body {
 .selected {
 	background-color: var(--orange);
 }
+
+.price {
+	font-weight: 300;
+	font-size: 24px;
+	color: #121146;
+
+}
+
+.name {
+	font-weight: 600;
+	font-size: 18px;
+	color: black;
+}
+
+.size {
+	font-weight: 400;
+	font-size: 12px;
+	color: black;
+}

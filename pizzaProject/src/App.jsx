@@ -2,8 +2,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import MainPage from './components/MainPage/MainPage'
 import s from './styles/App.module.css'
 import back from './assets/back2.svg'
-import SelectPizza from './components/SelectPizza/SelectPizza'
-import OrderPizza from './components/OrderPizza/OrderPizza'
 import SelectPizzaContainer from './components/SelectPizza/SelectPizzaContainer'
 import OrderPizzaContainer from './components/OrderPizza/OrderPizzaContainer'
 

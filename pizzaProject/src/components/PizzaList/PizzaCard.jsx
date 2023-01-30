@@ -10,13 +10,13 @@ const PizzaCard = ({ pizza, isSelected, togglePizza }) => {
 					<img src={pizza.img} alt='фото' />
 				</div>
 				<div className={s.info}>
-					<span className={s.name}>{pizza.name}</span>
-					<span className={s.size}>30см</span>
+					<span className='name'>{pizza.name}</span>
+					<span className='size'>30см</span>
 				</div>
 				<div className={s.ingredients}>{pizza.ingredients.join(', ')}</div>
 			</div>
 			<div className={s.footer}>
-				<div className={s.price}>{pizza.price.default} ₽</div>
+				<div className='price'>{pizza.price.default} ₽</div>
 				<div
 					onClick={() => togglePizza(pizza.id)}
 					className={[s.add, isSelected ? 'selected' : ''].join(' ')}>

@@ -7,21 +7,26 @@ import OrderList from '../OrderList/OrderList'
 
 
 
-const OrderPizza = ({ selectedPizzas, getSinglePizza, orderedPizzas, price, quantity }) => {
+const OrderPizza = ({ selectedPizzas, orderedPizzas, callbacks }) => {
 
 	useEffect(() => {
 		for (let i = 0; i < selectedPizzas.length; i++) {
-			getSinglePizza(selectedPizzas[i])
+			callbacks.getSinglePizza(selectedPizzas[i])
 		}
 	}, [])
+
+	const pizzaQuantity = orderedPizzas.reduce((s, card) => { return s + card.quantity }, 0)
+	const pizzaPrice = orderedPizzas.reduce((s, card) => { return s + card.price }, 0)
 
 	return (
 		<div className={s.main}>
 			<HeaderContainer />
 			<div className={s.content}>
-				<div className={[s.title, 'title'].join(' ')}>Оформить заказ</div>
-				<span>{quantity} товара за {price}</span>
-				<OrderList pizzas={orderedPizzas} />
+				<div className="box">
+					<div className={[s.title, 'title'].join(' ')}>Оформить заказ</div>
+					<span className={s.generalInfo}>{pizzaQuantity} товара за {pizzaPrice} ₽</span>
+					<OrderList pizzas={orderedPizzas} callbacks={callbacks} />
+				</div>
 			</div>
 			<FooterComponent />
 		</div>
