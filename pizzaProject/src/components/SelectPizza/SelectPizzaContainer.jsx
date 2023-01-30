@@ -1,6 +1,6 @@
-import { connect } from "react-redux";
-import { getPizzas, togglePizza } from "../../redux/actions";
-import SelectPizza from "./SelectPizza";
+import { connect } from 'react-redux'
+import { getPizzas, togglePizza } from '../../redux/actions'
+import SelectPizza from './SelectPizza'
 
 
 

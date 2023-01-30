@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import Header from "./Header";
+import HeaderComponent from "./Header";
 
 const mapStateToProps = (state) => {
 	return {
@@ -8,6 +8,6 @@ const mapStateToProps = (state) => {
 }
 
 
-const HeaderContainer = connect(mapStateToProps)(Header)
+const HeaderContainer = connect(mapStateToProps)(HeaderComponent)
 
 export default HeaderContainer

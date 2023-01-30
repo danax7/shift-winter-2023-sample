@@ -5,6 +5,7 @@ import back from './assets/back2.svg'
 import SelectPizza from './components/SelectPizza/SelectPizza'
 import OrderPizza from './components/OrderPizza/OrderPizza'
 import SelectPizzaContainer from './components/SelectPizza/SelectPizzaContainer'
+import OrderPizzaContainer from './components/OrderPizza/OrderPizzaContainer'
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<MainPage />} />
 					<Route path="/select" element={<SelectPizzaContainer />} />
-					<Route path="/order" element={<OrderPizza />} />
+					<Route path="/order" element={<OrderPizzaContainer />} />
 				</Routes>
 			</BrowserRouter>
 		</div >

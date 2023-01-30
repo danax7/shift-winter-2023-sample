@@ -1,5 +1,6 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import thunk from "redux-thunk";
+import orderReducer from "./reducers/orderReducer";
 import selectReducer from "./reducers/selectReducer";
 
 
@@ -9,6 +10,7 @@ import selectReducer from "./reducers/selectReducer";
 
 const rootReducer = combineReducers({
 	selectPage: selectReducer,
+	orderPage: orderReducer
 })
 
 

@@ -6,7 +6,7 @@ import './s.css'
 import Logo from '../Logo/Logo'
 
 
-const Footer = () => {
+const FooterComponent = () => {
 	return (
 		<footer className='footer'>
 			<div className='box'>
@@ -24,4 +24,4 @@ const Footer = () => {
 	)
 }
 
-export default Footer
+export default FooterComponent

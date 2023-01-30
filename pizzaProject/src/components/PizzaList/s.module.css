@@ -51,10 +51,11 @@
 	background-color: var(--orange);
 }
 
-
+.imgWrapper {}
 
 .imgWrapper img {
 	max-width: 100%;
+	/* filter: drop-shadow(20px 10px 20px rgba(143, 92, 32, 0.1)) drop-shadow(10px 5px 10px rgba(143, 92, 32, 0.1)); */
 }
 
 

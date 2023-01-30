@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Categories from '../ Categories/Categories'
-import Footer from '../Footer/Footer'
+import FooterComponent from '../Footer/Footer'
 import PizzaList from '../PizzaList/PizzaList'
 import Header from '../Header/Header'
 import preloader from '../../assets/preloader.gif'
@@ -38,7 +38,7 @@ const SelectPizza = ({ getPizzas, togglePizza, pizzas, categories, currentCatego
 					{showPizzas}
 				</div>
 			</div>
-			<Footer />
+			<FooterComponent />
 		</div>
 	)
 }

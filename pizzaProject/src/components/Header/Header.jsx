@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Logo from '../Logo/Logo'
 import s from './s.module.css'
 
-const Header = ({ orderQuantity }) => {
+const HeaderComponent = ({ orderQuantity }) => {
 
 	const showOrderQuantity = orderQuantity ? ` (${orderQuantity})` : ""
 
@@ -20,12 +20,12 @@ const Header = ({ orderQuantity }) => {
 						</Link>
 					</li>
 					<li className={s.link}>
-						<Link to="select">
+						<Link to="/select">
 							Выбрать пиццу
 						</Link>
 					</li>
 					<li className={s.link}>
-						<Link to="order" >
+						<Link to="/order" >
 							Оформить заказ{showOrderQuantity}
 						</Link>
 					</li>
@@ -35,4 +35,4 @@ const Header = ({ orderQuantity }) => {
 	)
 }
 
-export default Header
+export default HeaderComponent
