@@ -4,6 +4,7 @@ import FooterComponent from '../Footer/Footer'
 import s from './s.module.css'
 import { useEffect } from 'react'
 import OrderList from '../OrderList/OrderList'
+import OrderForm from '../OrderForm/OrderForm'
 
 
 
@@ -24,8 +25,9 @@ const OrderPizza = ({ selectedPizzas, orderedPizzas, callbacks }) => {
 			<div className={s.content}>
 				<div className="box">
 					<div className={[s.title, 'title'].join(' ')}>Оформить заказ</div>
-					<span className={s.generalInfo}>{pizzaQuantity} товара за {pizzaPrice} ₽</span>
+					<span className={s.generalInfo}>{pizzaQuantity} шт. за {pizzaPrice} ₽</span>
 					<OrderList pizzas={orderedPizzas} callbacks={callbacks} />
+					<OrderForm />
 				</div>
 			</div>
 			<FooterComponent />

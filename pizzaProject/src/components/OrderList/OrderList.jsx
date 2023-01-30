@@ -1,6 +1,5 @@
 import React from 'react'
 import OrderPizzaCard from './OrderPizzaCard'
-import s from './s.module.css'
 
 
 const OrderList = ({ pizzas, callbacks }) => {

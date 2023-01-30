@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import HeaderContainer from '../Header/HeaderContainer'
-import OrangeButton from '../OrangeButton/OrangeButton'
 import s from './s.module.css'
 
 const MainPage = () => {
@@ -10,9 +9,7 @@ const MainPage = () => {
 			<div className={s.main}>
 				<HeaderContainer />
 				<div className={s.btn}>
-					<Link to="select">
-						<OrangeButton content="Заказать" />
-					</Link>
+					<Link to="select">Заказать</Link>
 				</div>
 			</div>
 		</div>
