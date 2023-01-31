@@ -2,45 +2,18 @@ import React from 'react'
 import { useFormik } from 'formik'
 import s from './s.module.css'
 import ErrorField from '../ErrorField/ErrorField'
+import { getErrors, values } from './formHelpers'
+
 
 
 const OrderForm = ({ onOrderSubmit, orderedPizzas }) => {
 	const formik = useFormik({
-		initialValues: {
-			lastname: '',
-			firstname: '',
-			patronymic: '',
-			nonePatronymic: false,
-			phoneNumber: '',
-			birthDate: '',
-			city: '',
-			street: '',
-			house: '',
-			apartment: '',
-			noneApartment: false,
-			comment: '',
-		},
+		initialValues: values,
 		onSubmit: values => {
 			onOrderSubmit(values, orderedPizzas)
 		},
 		validate: values => {
-			let errors = {}
-
-			for (let key in values) {
-				if (!values[key] && key !== 'comment' && key !== 'nonePatronymic' && key !== 'noneApartment' && key !== 'patronymic' && key !== 'apartment') {
-					errors[`${key}`] = 'заполните поле'
-				}
-			}
-
-			if (!values.patronymic && !values.nonePatronymic) {
-				errors.patronymic = 'введите отчество или поставте галочку'
-			}
-
-			if (!values.apartment && !values.noneApartment) {
-				errors.apartment = 'введите квартиру или поставте галочку'
-			}
-
-			return errors
+			return getErrors(values)
 		}
 	})
 
@@ -59,7 +32,8 @@ const OrderForm = ({ onOrderSubmit, orderedPizzas }) => {
 							<ErrorField value={formik.values.firstname} error={formik.errors.firstname} handleChange={formik.handleChange}
 								inputName='firstname' placeholder='Имя' />
 
-							<input type="text" name='patronymic' onChange={formik.handleChange} value={formik.values.patronymic} placeholder='Отчество' />
+							<input type="text" name='patronymic' onChange={formik.handleChange} disabled={formik.values.nonePatronymic}
+								value={formik.values.patronymic} placeholder='Отчество' />
 							<div className={s.errorWrapper}>
 								<input type="checkbox" id='nonePatronymic' name="nonePatronymic" onChange={formik.handleChange} checked={formik.values.nonePatronymic} />
 								<label htmlFor='nonePatronymic'>нет отчества</label>
@@ -89,7 +63,8 @@ const OrderForm = ({ onOrderSubmit, orderedPizzas }) => {
 							<ErrorField value={formik.values.house} error={formik.errors.house} handleChange={formik.handleChange}
 								inputName='house' placeholder='Дом' />
 
-							<input type="text" className={s.apartment} name='apartment' width='20' onChange={formik.handleChange} value={formik.values.apartment} placeholder='Квартира' />
+							<input type="text" className={s.apartment} name='apartment' disabled={formik.values.noneApartment}
+								onChange={formik.handleChange} value={formik.values.apartment} placeholder='Квартира' />
 							<div className={s.errorWrapper}>
 								<input type="checkbox" name="noneApartment" id="noneApartment" onChange={formik.handleChange} checked={formik.values.noneApartment} />
 								<label htmlFor='noneApartment'>нет квартиры</label>
