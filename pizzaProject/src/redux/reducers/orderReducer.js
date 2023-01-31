@@ -1,8 +1,9 @@
-import { DECREASE_PIZZA_QUANTITY, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SET_SINGLE_PIZZA } from "../actionTypes";
+import { DECREASE_PIZZA_QUANTITY, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SET_SINGLE_PIZZA, SUCCESS_ORDER } from "../actionTypes";
 
 
 const initialState = {
 	orderedPizzas: [],
+	success: false
 }
 
 const orderReducer = (state = initialState, action) => {
@@ -54,6 +55,12 @@ const orderReducer = (state = initialState, action) => {
 			return {
 				...state,
 				orderedPizzas: state.orderedPizzas.filter(card => card.pizza.id !== action.payload)
+			}
+
+		case SUCCESS_ORDER:
+			return {
+				...state,
+				success: true
 			}
 
 		default:

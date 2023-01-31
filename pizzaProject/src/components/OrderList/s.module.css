@@ -3,6 +3,7 @@
 	justify-content: space-between;
 	align-items: center;
 	height: 97px;
+	margin-top: 50px;
 }
 
 .imgWrapper {
@@ -13,6 +14,10 @@
 	max-height: 100%;
 }
 
+.info {
+	flex: 0 1 300px;
+}
+
 .actions {
 	display: flex;
 	align-items: center;
@@ -21,9 +26,7 @@
 
 .quantityActions {
 	display: flex;
-	/* width: 100px; */
 	height: 40px;
-	/* align-items: center; */
 	justify-content: space-around;
 	background: #F5F5F5;
 	border-radius: 30px;

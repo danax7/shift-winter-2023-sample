@@ -2,9 +2,10 @@ import React from 'react'
 import OrderPizzaCard from './OrderPizzaCard'
 
 
-const OrderList = ({ pizzas, callbacks }) => {
+const OrderList = ({ pizzas, success, callbacks }) => {
 
-	const pizzasList = pizzas.map(card => <OrderPizzaCard key={card.pizza.id} callbacks={callbacks} pizzaCard={card} />)
+	const pizzasList = pizzas.map(card =>
+		<OrderPizzaCard key={card.pizza.id} success={success} callbacks={callbacks} pizzaCard={card} />)
 
 	return (
 		<div>

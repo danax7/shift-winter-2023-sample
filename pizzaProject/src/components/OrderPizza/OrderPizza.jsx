@@ -5,10 +5,11 @@ import s from './s.module.css'
 import { useEffect } from 'react'
 import OrderList from '../OrderList/OrderList'
 import OrderForm from '../OrderForm/OrderForm'
+import SuccessOrder from '../SuccessOrder/SuccessOrder'
 
 
 
-const OrderPizza = ({ selectedPizzas, orderedPizzas, callbacks }) => {
+const OrderPizza = ({ selectedPizzas, orderedPizzas, success, callbacks }) => {
 
 	useEffect(() => {
 		for (let i = 0; i < selectedPizzas.length; i++) {
@@ -26,8 +27,12 @@ const OrderPizza = ({ selectedPizzas, orderedPizzas, callbacks }) => {
 				<div className="box">
 					<div className={[s.title, 'title'].join(' ')}>Оформить заказ</div>
 					<span className={s.generalInfo}>{pizzaQuantity} шт. за {pizzaPrice} ₽</span>
-					<OrderList pizzas={orderedPizzas} callbacks={callbacks} />
-					<OrderForm />
+					<OrderList success={success} pizzas={orderedPizzas} callbacks={callbacks} />
+					{success ?
+						<SuccessOrder />
+						:
+						<OrderForm onOrderSubmit={callbacks.createOrder} orderedPizzas={orderedPizzas} />}
+
 				</div>
 			</div>
 			<FooterComponent />

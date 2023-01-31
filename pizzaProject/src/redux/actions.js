@@ -1,4 +1,4 @@
-import { DECREASE_PIZZA_QUANTITY, GET_PIZZAS, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SET_ERROR_GET, SET_PIZZA_LOADED, SET_SINGLE_PIZZA, TOGGLE_PIZZA } from "./actionTypes"
+import { DECREASE_PIZZA_QUANTITY, GET_PIZZAS, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SET_ERROR_GET, SET_PIZZA_LOADED, SET_SINGLE_PIZZA, SUCCESS_ORDER, TOGGLE_PIZZA } from "./actionTypes"
 
 // export interface IAction<T> {
 // 	type: string,
@@ -83,3 +83,27 @@ export const removePizzaOrder = (id) => ({
 	type: REMOVE_PIZZA_ORDER,
 	payload: id
 })
+
+export const createPizzaOrder = (form) => ({
+
+})
+
+export const successOrder = () => ({
+	type: SUCCESS_ORDER
+})
+
+
+export const sendPizzaOrder = (form, pizzas) => {
+
+	return dispatch => {
+		fetch(`https://shift-winter-2023-backend.onrender.com/api/pizza/createOrder`, {
+			method: 'post',
+			body: JSON.stringify({ pizzas: pizzas, details: form }),
+			headers: {
+				'content-type': 'application/json'
+			}
+		})
+			.catch(err => dispatch({ type: '__ERROR__' }))
+			.finally(() => dispatch(successOrder()))
+	}
+}
