@@ -3,13 +3,22 @@ import HeaderContainer from '../Header/HeaderContainer'
 import FooterComponent from '../Footer/Footer'
 import s from './s.module.css'
 import { useEffect } from 'react'
+import SuccessOrder from '../SuccessOrder/SuccessOrder'
 import OrderList from '../OrderList/OrderList'
 import OrderForm from '../OrderForm/OrderForm'
-import SuccessOrder from '../SuccessOrder/SuccessOrder'
+import { IOrderPizzaDispatchProps } from './OrderPizzaContainer'
+import { IPizzaOrder } from '../../modulesTs/interfaces'
 
 
+interface IOrderPizzaProps {
+	selectedPizzas: number[],
+	orderedPizzas: IPizzaOrder[],
+	callbacks: IOrderPizzaDispatchProps,
+	success: boolean,
+}
 
-const OrderPizza = ({ selectedPizzas, orderedPizzas, success, callbacks }) => {
+
+const OrderPizza = ({ selectedPizzas, orderedPizzas, success, callbacks }: IOrderPizzaProps) => {
 
 	useEffect(() => {
 		for (let i = 0; i < selectedPizzas.length; i++) {
@@ -31,8 +40,8 @@ const OrderPizza = ({ selectedPizzas, orderedPizzas, success, callbacks }) => {
 					{success ?
 						<SuccessOrder />
 						:
-						<OrderForm onOrderSubmit={callbacks.createOrder} orderedPizzas={orderedPizzas} />}
-
+						<OrderForm onOrderSubmit={callbacks.createOrder} orderedPizzas={orderedPizzas} />
+					}
 				</div>
 			</div>
 			<FooterComponent />

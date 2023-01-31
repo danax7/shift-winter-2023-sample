@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
-import { getPizzas, togglePizza } from '../../redux/actions'
-import { dispatchType, IState } from '../../redux/store'
+import { ThunkDispatch } from 'redux-thunk'
+import { getPizzas, IAction, togglePizza } from '../../redux/actions'
+import { IState, stateType } from '../../redux/store'
 import SelectPizza from './SelectPizza'
-
 
 
 const mapStateToProps = (state: IState) => {
@@ -16,7 +16,7 @@ const mapStateToProps = (state: IState) => {
 	}
 }
 
-const mapDispatchToProps = (dispatch: dispatchType) => {
+const mapDispatchToProps = (dispatch: ThunkDispatch<stateType, void, IAction>) => {
 	return {
 		getPizzas: () => dispatch(getPizzas()),
 		togglePizza: (id: number) => dispatch(togglePizza(id))

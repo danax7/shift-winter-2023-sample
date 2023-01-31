@@ -61,8 +61,12 @@ export interface IErrors {
 export const getErrors = (values: IValues): IErrors => {
 	let errors = { ...defaultValues }
 
+	console.log(values['comment'])
+
+
 	for (let key in values) {
-		if (values[`${key}`] === '' && key !== 'comment' && key !== 'nonePatronymic' && key !== 'noneApartment' && key !== 'patronymic' && key !== 'apartment') {
+
+		if (values[key] === '' && key !== 'comment' && key !== 'nonePatronymic' && key !== 'noneApartment' && key !== 'patronymic' && key !== 'apartment') {
 			errors[`${key}`] = 'заполните поле'
 		}
 	}

@@ -1,6 +1,6 @@
 import { IValues } from "../components/OrderForm/formHelpers";
 import { DECREASE_PIZZA_QUANTITY, GET_PIZZAS, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SET_ERROR_GET, SET_PIZZA_LOADED, SET_SINGLE_PIZZA, SUCCESS_ORDER, TOGGLE_PIZZA } from "./actionTypes"
-import { IPizzasOrder } from "./interfaces";
+import { IPizzaOrder } from "./interfaces";
 import { dispatchType } from "./store";
 
 export interface IAction {
@@ -8,7 +8,7 @@ export interface IAction {
 	payload?: any
 }
 
-// export type AsyncAction = (dispatch: (action: IAction) => any) => void;
+// export type AsyncAction = (dispatch: (action: IAction) => any) => void
 
 // todo select page
 
@@ -91,9 +91,27 @@ export const successOrder = () => ({
 })
 
 
-export const sendPizzaOrder = (form: IValues, pizzas: IPizzasOrder[]) => {
+export interface IForm {
+	user: {
+		firstname: string,
+		lastname: string,
+		phoneNumber: string,
+		birthDate: string,
+		registrationAddress: string
+	},
+	address: {
+		city: string,
+		street: string,
+		house: string,
+		apartment: string,
+		comment: string
+	}
+}
 
-	const formData = {
+
+export const sendPizzaOrder = (form: IValues, pizzas: IPizzaOrder[]) => {
+
+	const formData: IForm = {
 		user: {
 			firstname: form.firstname,
 			lastname: form.lastname,
@@ -110,7 +128,7 @@ export const sendPizzaOrder = (form: IValues, pizzas: IPizzasOrder[]) => {
 		}
 	}
 
-	const pizzasData = pizzas.map((card: IPizzasOrder) => card.pizza)
+	const pizzasData = pizzas.map((card: IPizzaOrder) => card.pizza)
 
 	return (dispatch: dispatchType) => {
 		fetch(`https://shift-winter-2023-backend.onrender.com/api/pizza/createOrder`, {

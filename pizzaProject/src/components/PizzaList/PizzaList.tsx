@@ -1,12 +1,12 @@
 import React from 'react'
-import { IPizza } from '../../redux/interfaces'
+import { IPizza } from '../../modulesTs/interfaces'
 import PizzaCard from './PizzaCard'
 import s from './s.module.css'
 
 interface IPizzaListProps {
 	pizzas: IPizza[],
 	selectedPizzas: number[],
-	togglePizza: any
+	togglePizza: (id: number) => void
 }
 
 

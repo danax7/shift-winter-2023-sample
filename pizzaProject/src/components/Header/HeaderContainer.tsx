@@ -1,11 +1,12 @@
 import { connect } from 'react-redux'
+import { IState } from '../../redux/store'
 import HeaderComponent from './Header'
 
 export interface IStateHeaderProps {
 	orderQuantity: number
 }
 
-const mapStateToProps = (state: any): IStateHeaderProps => {
+const mapStateToProps = (state: IState): IStateHeaderProps => {
 	return {
 		orderQuantity: state.selectPage.selectedPizzas.length
 	}

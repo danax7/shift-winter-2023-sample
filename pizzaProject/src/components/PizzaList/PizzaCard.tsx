@@ -1,12 +1,12 @@
 import React from 'react'
 import add from '../../assets/add.svg'
-import { IPizza } from '../../redux/interfaces'
+import { IPizza } from '../../modulesTs/interfaces'
 import s from './s.module.css'
 
 interface IPizzaCardProps {
 	pizza: IPizza,
 	isSelected: boolean,
-	togglePizza: any
+	togglePizza: (id: number) => void
 }
 
 const PizzaCard = ({ pizza, isSelected, togglePizza }: IPizzaCardProps) => {

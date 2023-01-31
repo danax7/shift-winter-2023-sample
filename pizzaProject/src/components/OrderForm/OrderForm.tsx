@@ -1,14 +1,18 @@
 import React from 'react'
 import { useFormik } from 'formik'
 import s from './s.module.css'
+import { defaultValues, getErrors, IValues, } from './formHelpers'
+import { IPizzaOrder } from '../../modulesTs/interfaces'
 import ErrorField from '../ErrorField/ErrorField'
-import { getErrors, values } from './formHelpers'
 
+interface IOrderFormProps {
+	onOrderSubmit: (values: IValues, orderedPizzas: IPizzaOrder[]) => void,
+	orderedPizzas: IPizzaOrder[]
+}
 
-
-const OrderForm = ({ onOrderSubmit, orderedPizzas }) => {
+const OrderForm = ({ onOrderSubmit, orderedPizzas }: IOrderFormProps) => {
 	const formik = useFormik({
-		initialValues: values,
+		initialValues: defaultValues,
 		onSubmit: values => {
 			onOrderSubmit(values, orderedPizzas)
 		},
