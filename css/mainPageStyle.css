@@ -1,0 +1,180 @@
+body{
+    background:#191F2C url("/img/bg-texture-wood4.png") no-repeat 50%  50%;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+
+}
+.name{
+    font-family: "Bodoni MT", normal;
+    color: white;
+    font-size: 22px;
+}
+.header_block{
+    display: flex;
+}
+.menu_links{
+    padding-top: 20px;
+}
+.menu_links ul{
+    margin: 0;
+    padding: 4px;
+}
+
+.menu_links li{
+    display: inline-flex;
+    margin-right: 5px;
+    padding: 3px;
+    font-size: 20px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+}
+
+.menu_links a:active,
+.menu_links a:hover,
+.menu_links a{
+    text-decoration: none;
+    color: #EEEEEE;
+}
+
+.menu_block{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.company_name{
+    display: flex;
+    margin-top:4%;
+    margin-left: 7%;
+}
+
+.pepper{
+    transform: rotate(-5.18deg);
+    display: flex;
+    margin-left: 12%;
+    max-width: 80%;
+}
+
+.salad{
+    display: flex;
+    max-width: 50%;
+}
+
+.salad2{
+    display: inline-flex;
+    max-width: 20%;
+    float: right;
+
+}
+.tomato{
+    display: flex;
+    position: absolute;
+    width: 20%;
+    height: 18%;
+    left: 80%;
+    top: 343px;
+}
+
+.chesnok{
+    display: inline-flex;
+    position: absolute;
+    width: 8%;
+    left: 0px;
+    top: 85%;
+    overflow: hidden;
+}
+.pizza{
+    display: flex;
+    position: absolute;
+    width: 54%;
+    left: 23%;
+    top: 70%;
+    padding-bottom: 0px;
+}
+
+.olive1{
+    display: flex;
+    position: absolute;
+    width: 8%;
+    left: 15%;
+    top: 95%;
+}
+.redPeepper{
+    display: flex;
+    position: absolute;
+    width: 10%;
+    left: 20%;
+    top: 73%;
+}
+.cheese{
+    display: flex;
+    position: absolute;
+    width: 8%;
+    left: 30%;
+    top: 60%;
+}
+
+.cheese{
+    display: flex;
+    position: absolute;
+    width: 8%;
+    left: 30%;
+    top: 60%;
+}
+
+.pepperoni{
+    display: flex;
+    position: absolute;
+    width: 8%;
+    left: 42%;
+    top: 52%;
+}
+
+.bacon{
+    display: flex;
+    position: absolute;
+    width: 8%;
+    left: 57%;
+    top: 55%;
+}
+.chicken{
+    display: flex;
+    position: absolute;
+    width: 9%;
+    left: 69%;
+    top: 69%;
+}
+.beef{
+    display: flex;
+    position: absolute;
+    width: 9%;
+    left: 74%;
+    top: 92%;
+}
+
+.form_button {
+    position: absolute;
+    left: 43%;
+    top: 100%;
+    display: inline-flex;
+    padding: 12px 32px;
+    transition: all 0.3s ease-out;
+    text-transform: uppercase;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    background-color: #F6B716;
+    background-clip: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.form_button:hover {
+    transition: all 0.3s ease-out;
+    transform: scale(1.06, 1.06);
+}
+
+

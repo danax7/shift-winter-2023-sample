@@ -1,0 +1,242 @@
+body{
+    margin: 0px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.topnav {
+    display: flex;
+    background:#191F2C url("/img/bg-texture-wood4.png") no-repeat 50%  50%;
+    height: 95px;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    background-size: cover;
+}
+
+.logo{
+    display: flex;
+    float: left;
+    margin-left: 6%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.pepper{
+    display: flex;
+    max-width: 100%;
+    padding-left: 3%;
+}
+.nav_menu{
+    display: flex;
+    text-decoration: none;
+    float: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nav_menu a{
+    display: flex;
+    text-decoration: none;
+    margin-right: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+}
+.main_logo{
+    text-decoration: none;
+    font-family: "Bodoni MT", normal;
+    color: white;
+    font-size: 22px;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+.nav_menu a:active,
+.nav_menu a:hover,
+.nav_menu a{
+    text-decoration: none;
+    color: #EEEEEE;
+    font-family: Inter;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.leaf{
+    display: flex;
+}
+
+.main_container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4%;
+    min-height: 100%;
+    flex: 1 1 auto;
+}
+
+.choose_pizza{
+    list-style-type: none;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vector1{
+    display: flex;
+    position: absolute;
+    left: 0;
+}
+
+.sign{
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+    text-align: center;
+
+}
+.vector2{
+    position: absolute;
+    right: 0;
+    display: flex;
+    float: right;
+}
+
+.form_button {
+    display: inline-flex;
+    padding: 12px 32px;
+    transition: all 0.3s ease-out;
+    color: black;
+    border: none;
+    border-radius: 40px;
+    outline: none;
+    background-color: #ECEEF6;
+    background-clip: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.form_button:hover {
+    transition: all 0.3s ease-out;
+    transform: scale(1.06, 1.06);
+}
+
+.button_block{
+    justify-content: space-evenly;
+    display: flex;
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.pizza_block{
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+.pizza_block1{
+    margin-bottom: 3%;
+    float: left;
+    margin-left: 3%;
+    background: #FFFFFF;
+    border: 2px solid #ECEEF7;
+    height: 408px;
+    width: 260px;
+    border-radius: 20px;
+
+
+}
+.image_block1{
+
+
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.pizza_info{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.pizza_header{
+    margin-top: 7%;
+    font-family: 'Inter',sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 140%;
+}
+
+.pizza_description{
+    font-family: 'Inter',sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+}
+
+.pizza_picture{
+    padding-left: 10%;
+}
+.pizza_price{
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 28px;
+}
+
+footer{
+    background-color: #191F2C;
+    height: 120px;
+}
+
+footer a{
+    color: #EEEEEE;
+}
+
+.Santorinis{
+    font-size: 20px;
+}
+
+.Copiright{
+    padding-top: 7px;
+    font-family: "Inter", sans-serif;
+
+}
+
+.footer_info{
+    padding-top: 30px;
+    padding-left: 40px;
+}
+
+.contacts{
+    display: flex;
+    float: right;
+    width: 30%;
+    justify-content: space-evenly;
+
+
+}
+.insta{
+
+}
+.img1{
+    width: 25%;
+}
+
+.img2{
+    width: 25%;
+}
+
+.img3{
+    width: 25%;
+}
