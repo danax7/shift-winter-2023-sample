@@ -1,8 +1,15 @@
+import { IAction } from "../actions"
 import { GET_PIZZAS, SET_ERROR_GET, SET_PIZZA_LOADED, TOGGLE_PIZZA } from "../actionTypes"
+import { IPizza } from "../interfaces"
 
-// export interface ISelectState {
-// 	pizzas: IPizza[]
-// }
+export interface ISelectState {
+	pizzas: IPizza[],
+	categories: string[],
+	currentCategory: string,
+	pizzasLoaded: boolean,
+	errorLoading: boolean,
+	selectedPizzas: number[]
+}
 
 const initialState = {
 	pizzas: [],
@@ -13,7 +20,7 @@ const initialState = {
 	selectedPizzas: []
 }
 
-const selectReducer = (state = initialState, action) => {
+const selectReducer = (state = initialState, action: IAction) => {
 
 	switch (action.type) {
 		case GET_PIZZAS:
@@ -38,12 +45,12 @@ const selectReducer = (state = initialState, action) => {
 			}
 
 		case TOGGLE_PIZZA:
-			if (state.selectedPizzas.indexOf(action.payload) !== -1) {
-				return {
-					...state,
-					selectedPizzas: state.selectedPizzas.filter(id => id !== action.payload)
-				}
-			}
+			// if (state.selectedPizzas.indexOf(action.payload) !== -1) {
+			// 	return {
+			// 		...state,
+			// 		selectedPizzas: state.selectedPizzas.filter(id => id !== action.payload)
+			// 	}
+			// }
 
 			return {
 				...state,

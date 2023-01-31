@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../Logo/Logo'
+import { IStateHeaderProps } from './HeaderContainer'
 import s from './s.module.css'
 
-const HeaderComponent = ({ orderQuantity }) => {
+const HeaderComponent = ({ orderQuantity }: IStateHeaderProps) => {
 
-	const showOrderQuantity = orderQuantity ? ` (${orderQuantity})` : ""
+	const showOrderQuantity = orderQuantity ? ` (${orderQuantity})` : ''
 
 	return (
 		<div className="box">

@@ -1,18 +1,23 @@
 import React, { useEffect } from 'react'
-import Categories from '../ Categories/Categories'
-import FooterComponent from '../Footer/Footer'
-import PizzaList from '../PizzaList/PizzaList'
-import Header from '../Header/Header'
-import preloader from '../../assets/preloader.gif'
 import s from './s.module.css'
 import HeaderContainer from '../Header/HeaderContainer'
+import Categories from '../ Categories/Categories'
+import FooterComponent from '../Footer/Footer'
+import { IPizza } from '../../redux/interfaces'
+import PizzaList from '../PizzaList/PizzaList'
 
-// interface ISelectPizzaProps {
-// 	pizzas: IPizza[],
-// 	getPizzas: () => void
-// }
+interface ISelectPizzaProps {
+	pizzas: IPizza[],
+	getPizzas: any,
+	togglePizza: any,
+	categories: string[],
+	currentCategory: string,
+	isLoaded: boolean,
+	errorLoading: boolean,
+	selectedPizzas: number[]
+}
 
-const SelectPizza = ({ getPizzas, togglePizza, pizzas, categories, currentCategory, isLoaded, errorLoading, selectedPizzas }) => {
+const SelectPizza = ({ getPizzas, togglePizza, pizzas, categories, currentCategory, isLoaded, errorLoading, selectedPizzas }: ISelectPizzaProps) => {
 
 	useEffect(() => {
 		if (!isLoaded) {

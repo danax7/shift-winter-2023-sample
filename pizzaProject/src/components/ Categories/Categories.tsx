@@ -1,8 +1,12 @@
 import React from 'react'
 import s from './s.module.css'
 
+interface ICategoriesProps {
+	categories: string[],
+	currentCategory: string
+}
 
-const Categories = ({ categories, currentCategory }) => {
+const Categories = ({ categories, currentCategory }: ICategoriesProps) => {
 
 	const categoriesBtns = categories.map((category, index) =>
 		<div

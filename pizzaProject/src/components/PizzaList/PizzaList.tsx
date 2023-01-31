@@ -1,9 +1,16 @@
 import React from 'react'
+import { IPizza } from '../../redux/interfaces'
 import PizzaCard from './PizzaCard'
 import s from './s.module.css'
 
+interface IPizzaListProps {
+	pizzas: IPizza[],
+	selectedPizzas: number[],
+	togglePizza: any
+}
 
-const PizzaList = ({ pizzas, selectedPizzas, togglePizza }) => {
+
+const PizzaList = ({ pizzas, selectedPizzas, togglePizza }: IPizzaListProps) => {
 
 	const pizzaCards = pizzas.map(pizza =>
 		<PizzaCard key={pizza.id} togglePizza={togglePizza} pizza={pizza} isSelected={selectedPizzas.indexOf(pizza.id) !== -1} />)

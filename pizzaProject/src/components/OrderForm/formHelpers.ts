@@ -12,22 +12,22 @@ export const houseRegexp = new RegExp('^[0-9]{1,10}$')
 export const phoneRegexp = new RegExp('^(\\+)?[0-9]{11}$')
 export const dateRegexp = new RegExp(`${dd_mm}\\.(19\\d\\d|20([01]\\d|2[0-3]))$`)
 
-// interface IValues {
-// 	lastname: string,
-// 	firstname: string,
-// 	patronymic: string,
-// 	nonePatronymic: boolean,
-// 	phoneNumber: string,
-// 	birthDate: string,
-// 	city: string,
-// 	street: string,
-// 	house: string,
-// 	apartment: string,
-// 	noneApartment: boolean,
-// 	comment: string,
-// }
+export interface IValues {
+	lastname: string,
+	firstname: string,
+	patronymic: string,
+	nonePatronymic: boolean,
+	phoneNumber: string,
+	birthDate: string,
+	city: string,
+	street: string,
+	house: string,
+	apartment: string,
+	noneApartment: boolean,
+	comment: string,
+}
 
-export const values = {
+export const defaultValues = {
 	lastname: '',
 	firstname: '',
 	patronymic: '',
@@ -43,23 +43,23 @@ export const values = {
 }
 
 
-// interface IErrors {
-// 	lastname?: string,
-// 	firstname?: string,
-// 	patronymic?: string,
-// 	nonePatronymic?: boolean,
-// 	phoneNumber?: string,
-// 	birthDate?: string,
-// 	city?: string,
-// 	street?: string,
-// 	house?: string,
-// 	apartment?: string,
-// 	noneApartment?: boolean,
-// 	comment?: string,
-// }
+export interface IErrors {
+	lastname?: string,
+	firstname?: string,
+	patronymic?: string,
+	nonePatronymic?: boolean,
+	phoneNumber?: string,
+	birthDate?: string,
+	city?: string,
+	street?: string,
+	house?: string,
+	apartment?: string,
+	noneApartment?: boolean,
+	comment?: string,
+}
 
-export const getErrors = (values) => {
-	let errors = {}
+export const getErrors = (values: IValues): IErrors => {
+	let errors = { ...defaultValues }
 
 	for (let key in values) {
 		if (values[`${key}`] === '' && key !== 'comment' && key !== 'nonePatronymic' && key !== 'noneApartment' && key !== 'patronymic' && key !== 'apartment') {

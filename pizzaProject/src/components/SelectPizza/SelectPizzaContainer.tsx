@@ -1,10 +1,11 @@
 import { connect } from 'react-redux'
 import { getPizzas, togglePizza } from '../../redux/actions'
+import { dispatchType, IState } from '../../redux/store'
 import SelectPizza from './SelectPizza'
 
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: IState) => {
 	return {
 		pizzas: state.selectPage.pizzas,
 		categories: state.selectPage.categories,
@@ -15,10 +16,10 @@ const mapStateToProps = (state) => {
 	}
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: dispatchType) => {
 	return {
 		getPizzas: () => dispatch(getPizzas()),
-		togglePizza: (id) => dispatch(togglePizza(id))
+		togglePizza: (id: number) => dispatch(togglePizza(id))
 	}
 }
 

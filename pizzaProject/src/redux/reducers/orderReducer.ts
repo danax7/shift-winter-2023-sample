@@ -1,12 +1,19 @@
+import { IAction } from "../actions";
 import { DECREASE_PIZZA_QUANTITY, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SET_SINGLE_PIZZA, SUCCESS_ORDER } from "../actionTypes";
+import { IPizzaOrder } from "../interfaces";
 
 
-const initialState = {
+export interface IOrderState {
+	orderedPizzas: IPizzaOrder[],
+	success: boolean
+}
+
+const initialState: IOrderState = {
 	orderedPizzas: [],
 	success: false
 }
 
-const orderReducer = (state = initialState, action) => {
+const orderReducer = (state = initialState, action: IAction) => {
 
 	switch (action.type) {
 		case SET_SINGLE_PIZZA:

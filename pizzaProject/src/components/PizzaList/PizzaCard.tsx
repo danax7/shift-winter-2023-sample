@@ -1,8 +1,15 @@
 import React from 'react'
 import add from '../../assets/add.svg'
+import { IPizza } from '../../redux/interfaces'
 import s from './s.module.css'
 
-const PizzaCard = ({ pizza, isSelected, togglePizza }) => {
+interface IPizzaCardProps {
+	pizza: IPizza,
+	isSelected: boolean,
+	togglePizza: any
+}
+
+const PizzaCard = ({ pizza, isSelected, togglePizza }: IPizzaCardProps) => {
 	return (
 		<div className={s.card}>
 			<div className={s.content}>
