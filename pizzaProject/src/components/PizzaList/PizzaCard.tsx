@@ -1,6 +1,6 @@
 import React from 'react'
 import add from '../../assets/add.svg'
-import { IPizza } from '../../modulesTs/interfaces'
+import { IPizza } from '../../modulesTs/selectPageInterfaces'
 import s from './s.module.css'
 
 interface IPizzaCardProps {

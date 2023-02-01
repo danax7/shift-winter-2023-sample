@@ -1,9 +1,9 @@
 import React from 'react'
 import { useFormik } from 'formik'
 import s from './s.module.css'
-import { defaultValues, getErrors, IValues, } from './formHelpers'
-import { IPizzaOrder } from '../../modulesTs/interfaces'
+import { defaultValues, getErrors } from './formHelpers'
 import ErrorField from '../ErrorField/ErrorField'
+import { IPizzaOrder, IValues } from '../../modulesTs/orderPageIntarfaces'
 
 interface IOrderFormProps {
 	onOrderSubmit: (values: IValues, orderedPizzas: IPizzaOrder[]) => void,
@@ -13,12 +13,10 @@ interface IOrderFormProps {
 const OrderForm = ({ onOrderSubmit, orderedPizzas }: IOrderFormProps) => {
 	const formik = useFormik({
 		initialValues: defaultValues,
-		onSubmit: values => {
+		onSubmit: (values: IValues) => {
 			onOrderSubmit(values, orderedPizzas)
 		},
-		validate: values => {
-			return getErrors(values)
-		}
+		validate: getErrors
 	})
 
 
@@ -31,7 +29,6 @@ const OrderForm = ({ onOrderSubmit, orderedPizzas }: IOrderFormProps) => {
 						<div className={s.top}>
 							<ErrorField value={formik.values.lastname} error={formik.errors.lastname} handleChange={formik.handleChange}
 								inputName='lastname' placeholder='Фамилия' />
-
 
 							<ErrorField value={formik.values.firstname} error={formik.errors.firstname} handleChange={formik.handleChange}
 								inputName='firstname' placeholder='Имя' />
@@ -76,7 +73,7 @@ const OrderForm = ({ onOrderSubmit, orderedPizzas }: IOrderFormProps) => {
 							</div>
 						</div>
 
-						<textarea className={s.comment} type="text" name='comment' onChange={formik.handleChange} value={formik.values.comment} placeholder='Заметки для курьера' />
+						<textarea className={s.comment} name='comment' onChange={formik.handleChange} value={formik.values.comment} placeholder='Заметки для курьера' />
 					</div>
 				</div>
 				<button className={s.send} type='submit'>Отправить заказ</button>

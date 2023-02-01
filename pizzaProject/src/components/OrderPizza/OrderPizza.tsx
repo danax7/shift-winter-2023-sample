@@ -6,16 +6,7 @@ import { useEffect } from 'react'
 import SuccessOrder from '../SuccessOrder/SuccessOrder'
 import OrderList from '../OrderList/OrderList'
 import OrderForm from '../OrderForm/OrderForm'
-import { IOrderPizzaDispatchProps } from './OrderPizzaContainer'
-import { IPizzaOrder } from '../../modulesTs/interfaces'
-
-
-interface IOrderPizzaProps {
-	selectedPizzas: number[],
-	orderedPizzas: IPizzaOrder[],
-	callbacks: IOrderPizzaDispatchProps,
-	success: boolean,
-}
+import { IOrderPizzaProps } from './OrderPizzaContainer'
 
 
 const OrderPizza = ({ selectedPizzas, orderedPizzas, success, callbacks }: IOrderPizzaProps) => {

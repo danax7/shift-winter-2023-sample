@@ -1,8 +1,15 @@
 import React from 'react'
+import { IOrderPizzaDispatchProps, IPizzaOrder } from '../../modulesTs/orderPageIntarfaces'
 import OrderPizzaCard from './OrderPizzaCard'
 
+interface IOrderListProps {
+	pizzas: IPizzaOrder[],
+	success: boolean,
+	callbacks: IOrderPizzaDispatchProps
+}
 
-const OrderList = ({ pizzas, success, callbacks }) => {
+
+const OrderList = ({ pizzas, success, callbacks }: IOrderListProps) => {
 
 	const pizzasList = pizzas.map(card =>
 		<OrderPizzaCard key={card.pizza.id} success={success} callbacks={callbacks} pizzaCard={card} />)

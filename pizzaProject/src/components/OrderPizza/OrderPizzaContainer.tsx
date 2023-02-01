@@ -1,15 +1,11 @@
 import { connect } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
-import { decreasePizzaQuantity, getSinglePizza, IAction, IForm, increasePizzaQuantity, removePizzaOrder, sendPizzaOrder } from '../../redux/actions'
-import { IPizzaOrder } from '../../modulesTs/interfaces'
+import { IAction } from '../../modulesTs/generealInterfaces'
+import { IOrderPizzaDispatchProps, IPizzaOrder, IValues } from '../../modulesTs/orderPageIntarfaces'
+import { decreasePizzaQuantity, getSinglePizza, increasePizzaQuantity, removePizzaOrder, sendPizzaOrder } from '../../redux/actions'
 import { IState, stateType } from '../../redux/store'
-import { IValues } from '../OrderForm/formHelpers'
 import OrderPizza from './OrderPizza'
 
-
-export interface IOrderPizzaStateProps {
-
-}
 
 const mapStateToProps = (state: IState) => {
 	return {
@@ -19,13 +15,7 @@ const mapStateToProps = (state: IState) => {
 	}
 }
 
-export interface IOrderPizzaDispatchProps {
-	getSinglePizza: (id: number) => void,
-	increaseQuantity: (id: number) => void,
-	decreaseQuantity: (id: number) => void,
-	removePizzaOrder: (id: number) => void,
-	createOrder: (form: IValues, pizzas: IPizzaOrder[]) => void
-}
+
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<stateType, void, IAction>): { callbacks: IOrderPizzaDispatchProps } => {
 	return {
@@ -37,6 +27,13 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<stateType, void, IAction>): 
 			createOrder: (form: IValues, pizzas: IPizzaOrder[]) => dispatch(sendPizzaOrder(form, pizzas))
 		}
 	}
+}
+
+export interface IOrderPizzaProps {
+	selectedPizzas: number[],
+	orderedPizzas: IPizzaOrder[],
+	callbacks: IOrderPizzaDispatchProps,
+	success: boolean,
 }
 
 const OrderPizzaContainer = connect(mapStateToProps, mapDispatchToProps)(OrderPizza)

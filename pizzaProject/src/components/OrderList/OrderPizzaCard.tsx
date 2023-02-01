@@ -1,8 +1,15 @@
 import React from 'react'
+import { IOrderPizzaDispatchProps, IPizzaOrder } from '../../modulesTs/orderPageIntarfaces'
 import s from './s.module.css'
 
+interface IOrderPizzaCardProps {
+	pizzaCard: IPizzaOrder,
+	success: boolean,
+	callbacks: IOrderPizzaDispatchProps
+}
 
-const OrderPizzaCard = ({ pizzaCard, success, callbacks }) => {
+
+const OrderPizzaCard = ({ pizzaCard, success, callbacks }: IOrderPizzaCardProps) => {
 	return (
 		<div className={s.card}>
 			<div className={s.imgWrapper}>

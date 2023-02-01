@@ -1,3 +1,7 @@
+import { IErrors, IValues } from "../../modulesTs/orderPageIntarfaces";
+
+
+// todo Regexp
 
 const ddFeb = "(0[1-9]|[12]\\d)";
 const mmFeb = "02";
@@ -5,29 +9,17 @@ const dd = "(0[1-9]|[12]\\d|3[01])";
 const mm = "(0[13-9]|1[0-2])";
 const dd_mm = `(${ddFeb}\\.${mmFeb}|${dd}\\.${mm})`;
 
-export const nameRegexp = new RegExp('^[A-ZА-Я][a-zа-я]{1,29}$')
-export const cityRegexp = new RegExp('^[a-zа-яA-ZА-Я]{2,50}$')
-export const streetRegexp = new RegExp('^[a-zа-яA-ZА-Я]{2,60}$')
+export const nameRegexp = new RegExp('^[A-ZА-Я][A-ZА-Яa-zа-я\\s\\-]{1,29}$')
+export const cityRegexp = new RegExp('^[a-zа-яA-ZА-Я\\s\\-]{2,50}$')
+export const streetRegexp = new RegExp('^[a-zа-яA-ZА-Я\\s\\-]{2,60}$')
 export const houseRegexp = new RegExp('^[0-9]{1,10}$')
 export const phoneRegexp = new RegExp('^(\\+)?[0-9]{11}$')
 export const dateRegexp = new RegExp(`${dd_mm}\\.(19\\d\\d|20([01]\\d|2[0-3]))$`)
 
-export interface IValues {
-	lastname: string,
-	firstname: string,
-	patronymic: string,
-	nonePatronymic: boolean,
-	phoneNumber: string,
-	birthDate: string,
-	city: string,
-	street: string,
-	house: string,
-	apartment: string,
-	noneApartment: boolean,
-	comment: string,
-}
 
-export const defaultValues = {
+// todo formik
+
+export const defaultValues: IValues = {
 	lastname: '',
 	firstname: '',
 	patronymic: '',
@@ -43,33 +35,16 @@ export const defaultValues = {
 }
 
 
-export interface IErrors {
-	lastname?: string,
-	firstname?: string,
-	patronymic?: string,
-	nonePatronymic?: boolean,
-	phoneNumber?: string,
-	birthDate?: string,
-	city?: string,
-	street?: string,
-	house?: string,
-	apartment?: string,
-	noneApartment?: boolean,
-	comment?: string,
-}
-
 export const getErrors = (values: IValues): IErrors => {
-	let errors = { ...defaultValues }
-
-	console.log(values['comment'])
+	let errors: IErrors = {}
 
 
-	for (let key in values) {
-
+	Object.keys(values).forEach(key => {
 		if (values[key] === '' && key !== 'comment' && key !== 'nonePatronymic' && key !== 'noneApartment' && key !== 'patronymic' && key !== 'apartment') {
-			errors[`${key}`] = 'заполните поле'
+			errors[key] = 'заполните поле'
 		}
-	}
+	})
+
 
 	if (!values.patronymic && !values.nonePatronymic) {
 		errors.patronymic = 'введите отчество или поставте галочку'

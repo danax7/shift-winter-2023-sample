@@ -1,20 +1,10 @@
-import { IValues } from "../components/OrderForm/formHelpers";
+import { IBackPizzaOrder, IForm, IPizzaOrder, IValues } from "../modulesTs/orderPageIntarfaces";
 import { DECREASE_PIZZA_QUANTITY, GET_PIZZAS, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SET_ERROR_GET, SET_PIZZA_LOADED, SET_SINGLE_PIZZA, SUCCESS_ORDER, TOGGLE_PIZZA } from "./actionTypes"
-import { IPizzaOrder } from "./interfaces";
 import { dispatchType } from "./store";
 
-export interface IAction {
-	type: string,
-	payload?: any
-}
 
-// export type AsyncAction = (dispatch: (action: IAction) => any) => void
 
 // todo select page
-
-
-
-// fetch all pizzas
 
 export const setPizzas = (pizza: any) => ({
 	type: GET_PIZZAS,
@@ -42,14 +32,11 @@ export const getPizzas = () => {
 	}
 }
 
-//
 
 export const togglePizza = (id: number) => ({
 	type: TOGGLE_PIZZA,
 	payload: id
 })
-
-//fetch single pizza ----------
 
 export const setSinglePizza = (pizza: any) => ({
 	type: SET_SINGLE_PIZZA,
@@ -91,22 +78,8 @@ export const successOrder = () => ({
 })
 
 
-export interface IForm {
-	user: {
-		firstname: string,
-		lastname: string,
-		phoneNumber: string,
-		birthDate: string,
-		registrationAddress: string
-	},
-	address: {
-		city: string,
-		street: string,
-		house: string,
-		apartment: string,
-		comment: string
-	}
-}
+// почему нет количества пицц в заказе
+
 
 
 export const sendPizzaOrder = (form: IValues, pizzas: IPizzaOrder[]) => {
@@ -115,7 +88,6 @@ export const sendPizzaOrder = (form: IValues, pizzas: IPizzaOrder[]) => {
 		user: {
 			firstname: form.firstname,
 			lastname: form.lastname,
-			phoneNumber: form.phoneNumber,
 			birthDate: form.birthDate,
 			registrationAddress: ''
 		},
@@ -128,8 +100,8 @@ export const sendPizzaOrder = (form: IValues, pizzas: IPizzaOrder[]) => {
 		}
 	}
 
-	const pizzasData = pizzas.map((card: IPizzaOrder) => card.pizza)
-
+	const pizzasData: IBackPizzaOrder[] = pizzas.map((card: IPizzaOrder) => ({ id: card.pizza.id, size: 'large', crust: '' }))
+	debugger;
 	return (dispatch: dispatchType) => {
 		fetch(`https://shift-winter-2023-backend.onrender.com/api/pizza/createOrder`, {
 			method: 'post',

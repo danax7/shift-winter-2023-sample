@@ -2,7 +2,7 @@ import React from 'react'
 import s from './s.module.css'
 
 interface ErrorFieldProps {
-	handleChange: ,
+	handleChange: (e: React.FormEvent<HTMLInputElement>) => void,
 	value: string,
 	error: string | undefined,
 	inputName: string,

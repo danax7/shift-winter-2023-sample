@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
-import { getPizzas, IAction, togglePizza } from '../../redux/actions'
+import { IAction } from '../../modulesTs/generealInterfaces'
+import { getPizzas, togglePizza } from '../../redux/actions'
 import { IState, stateType } from '../../redux/store'
 import SelectPizza from './SelectPizza'
 

@@ -1,12 +1,10 @@
-import React, { Dispatch, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import s from './s.module.css'
 import HeaderContainer from '../Header/HeaderContainer'
 import Categories from '../ Categories/Categories'
 import FooterComponent from '../Footer/Footer'
-import { IPizza } from '../../modulesTs/interfaces'
+import { IPizza } from '../../modulesTs/selectPageInterfaces'
 import PizzaList from '../PizzaList/PizzaList'
-import { dispatchType } from '../../redux/store'
-import { IAction } from '../../redux/actions'
 
 interface ISelectPizzaProps {
 	pizzas: IPizza[],

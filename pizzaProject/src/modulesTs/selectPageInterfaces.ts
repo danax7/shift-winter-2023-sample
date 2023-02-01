@@ -1,3 +1,4 @@
+import { IPizzaOrder } from "../../modulesTs/selectPageInterfaces";
 
 export interface IPizza {
 	id: number,
@@ -24,23 +25,3 @@ export interface IPizza {
 }
 
 
-export interface IUser {
-	firstname: string,
-	lastname: string,
-	birthDate: string,
-	registrationAddress: string
-}
-
-export interface IAddress {
-	city: string,
-	street: string,
-	house: string,
-	apartment: string,
-	comment: string
-}
-
-export interface IPizzaOrder {
-	pizza: IPizza,
-	quantity: number,
-	price: number
-}

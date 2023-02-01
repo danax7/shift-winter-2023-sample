@@ -1,5 +1,5 @@
 import React from 'react'
-import { IPizza } from '../../modulesTs/interfaces'
+import { IPizza } from '../../modulesTs/selectPageInterfaces'
 import PizzaCard from './PizzaCard'
 import s from './s.module.css'
 
