@@ -1,5 +1,11 @@
 import { IPizza } from "./selectPageInterfaces"
 
+export interface IOrderPageState {
+	orderedPizzas: IPizzaOrder[],
+	success: boolean
+}
+
+
 // todo fetch
 
 export interface IUser {

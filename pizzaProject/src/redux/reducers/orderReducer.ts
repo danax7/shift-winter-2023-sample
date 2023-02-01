@@ -1,12 +1,6 @@
 import { IAction } from "../../modulesTs/generealInterfaces";
-import { IPizzaOrder } from "../../modulesTs/orderPageIntarfaces";
+import { IOrderPageState } from "../../modulesTs/orderPageIntarfaces";
 import { DECREASE_PIZZA_QUANTITY, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SET_SINGLE_PIZZA, SUCCESS_ORDER } from "../actionTypes";
-
-
-export interface IOrderPageState {
-	orderedPizzas: IPizzaOrder[],
-	success: boolean
-}
 
 const initialState: IOrderPageState = {
 	orderedPizzas: [],

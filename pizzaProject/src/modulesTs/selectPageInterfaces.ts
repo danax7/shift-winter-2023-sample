@@ -1,4 +1,12 @@
-import { IPizzaOrder } from "../../modulesTs/selectPageInterfaces";
+
+export interface ISelectPageState {
+	pizzas: IPizza[],
+	categories: string[],
+	currentCategory: string,
+	pizzasLoaded: boolean,
+	errorLoading: boolean,
+	selectedPizzas: number[]
+}
 
 export interface IPizza {
 	id: number,

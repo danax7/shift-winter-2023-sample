@@ -11,7 +11,6 @@ interface ErrorFieldProps {
 }
 
 const ErrorField = ({ handleChange, value, error, inputName, placeholder, inputClass }: ErrorFieldProps) => {
-	console.log(inputClass)
 
 	return (
 		<div className={s.errorWrapper}>

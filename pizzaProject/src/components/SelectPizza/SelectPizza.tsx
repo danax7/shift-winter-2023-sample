@@ -8,7 +8,7 @@ import PizzaList from '../PizzaList/PizzaList'
 
 interface ISelectPizzaProps {
 	pizzas: IPizza[],
-	getPizzas: any,
+	getPizzas: () => void,
 	togglePizza: (id: number) => void,
 	categories: string[],
 	currentCategory: string,

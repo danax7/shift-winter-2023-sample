@@ -1,15 +1,6 @@
 import { IAction } from "../../modulesTs/generealInterfaces"
-import { IPizza } from "../../modulesTs/selectPageInterfaces"
+import { ISelectPageState } from "../../modulesTs/selectPageInterfaces"
 import { GET_PIZZAS, SET_ERROR_GET, SET_PIZZA_LOADED, TOGGLE_PIZZA } from "../actionTypes"
-
-export interface ISelectPageState {
-	pizzas: IPizza[],
-	categories: string[],
-	currentCategory: string,
-	pizzasLoaded: boolean,
-	errorLoading: boolean,
-	selectedPizzas: number[]
-}
 
 const initialState: ISelectPageState = {
 	pizzas: [],

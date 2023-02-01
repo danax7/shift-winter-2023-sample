@@ -1,4 +1,5 @@
 import { IBackPizzaOrder, IForm, IPizzaOrder, IValues } from "../modulesTs/orderPageIntarfaces";
+import { IPizza } from "../modulesTs/selectPageInterfaces";
 import { DECREASE_PIZZA_QUANTITY, GET_PIZZAS, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SET_ERROR_GET, SET_PIZZA_LOADED, SET_SINGLE_PIZZA, SUCCESS_ORDER, TOGGLE_PIZZA } from "./actionTypes"
 import { dispatchType } from "./store";
 
@@ -6,7 +7,7 @@ import { dispatchType } from "./store";
 
 // todo select page
 
-export const setPizzas = (pizza: any) => ({
+export const setPizzas = (pizza: IPizza) => ({
 	type: GET_PIZZAS,
 	payload: pizza
 })
@@ -24,9 +25,8 @@ export const getPizzas = () => {
 
 		fetch('https://shift-winter-2023-backend.onrender.com/api/pizza')
 			.then(raw => raw.json())
-			.then(pizza => {
+			.then((pizza: IPizza) => {
 				dispatch(setPizzas(pizza))
-				console.log(pizza)
 			})
 			.catch((err) => dispatch(setErrorGet()))
 			.finally(() => dispatch(setLoaded()))
@@ -39,7 +39,7 @@ export const togglePizza = (id: number) => ({
 	payload: id
 })
 
-export const setSinglePizza = (pizza: any) => ({
+export const setSinglePizza = (pizza: IPizza) => ({
 	type: SET_SINGLE_PIZZA,
 	payload: pizza
 })
@@ -49,7 +49,7 @@ export const getSinglePizza = (id: number) => {
 	return (dispatch: dispatchType) => {
 		fetch(`https://shift-winter-2023-backend.onrender.com/api/pizza/${id}`)
 			.then(raw => raw.json())
-			.then(pizza => {
+			.then((pizza: IPizza) => {
 				dispatch(setSinglePizza(pizza))
 			})
 	}

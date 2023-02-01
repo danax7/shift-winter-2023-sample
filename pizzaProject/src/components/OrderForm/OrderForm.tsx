@@ -10,8 +10,12 @@ interface IOrderFormProps {
 	orderedPizzas: IPizzaOrder[]
 }
 
+// здесь получилось очень массивная часть jsx разметки и есть две похожие секции с инпутами
+// но я не смог придумать как вынести это в одну компоненту, чтобы было удобно 
+
 const OrderForm = ({ onOrderSubmit, orderedPizzas }: IOrderFormProps) => {
 	const formik = useFormik({
+		validateOnChange: false,
 		initialValues: defaultValues,
 		onSubmit: (values: IValues) => {
 			onOrderSubmit(values, orderedPizzas)

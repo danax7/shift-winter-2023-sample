@@ -73,7 +73,7 @@
 .error {
 	position: absolute;
 	top: -30px;
-	right: -50px;
+	right: 0px;
 	background: #191F2C;
 	border-radius: 4px;
 	color: white;
