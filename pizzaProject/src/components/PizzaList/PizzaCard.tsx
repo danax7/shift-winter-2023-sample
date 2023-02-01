@@ -1,4 +1,3 @@
-import React from 'react'
 import add from '../../assets/images/add.svg'
 import { IPizza } from '../../modulesTs/selectPageInterfaces'
 import s from './s.module.css'

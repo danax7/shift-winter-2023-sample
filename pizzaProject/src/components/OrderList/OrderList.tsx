@@ -1,4 +1,3 @@
-import React from 'react'
 import { IOrderPizzaDispatchProps, IPizzaOrder } from '../../modulesTs/orderPageIntarfaces'
 import OrderPizzaCard from './OrderPizzaCard'
 

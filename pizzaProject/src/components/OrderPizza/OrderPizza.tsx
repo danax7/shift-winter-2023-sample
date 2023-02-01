@@ -1,4 +1,3 @@
-import React from 'react'
 import HeaderContainer from '../Header/HeaderContainer'
 import FooterComponent from '../Footer/Footer'
 import s from './s.module.css'

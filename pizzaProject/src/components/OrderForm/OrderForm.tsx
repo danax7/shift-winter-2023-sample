@@ -1,4 +1,3 @@
-import React from 'react'
 import { useFormik } from 'formik'
 import s from './s.module.css'
 import { defaultValues, getErrors } from './formHelpers'

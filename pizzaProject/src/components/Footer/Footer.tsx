@@ -1,4 +1,3 @@
-import React from 'react'
 import facebook from '../../assets/images/facebook.svg'
 import twitter from '../../assets/images/twitter.svg'
 import inst from '../../assets/images/inst.svg'

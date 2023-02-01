@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import s from './s.module.css'
 import HeaderContainer from '../Header/HeaderContainer'
 import Categories from '../ Categories/Categories'
