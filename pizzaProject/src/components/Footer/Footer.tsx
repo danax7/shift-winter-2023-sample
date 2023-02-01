@@ -1,7 +1,7 @@
 import React from 'react'
-import facebook from '../../assets/facebook.svg'
-import twitter from '../../assets/twitter.svg'
-import inst from '../../assets/inst.svg'
+import facebook from '../../assets/images/facebook.svg'
+import twitter from '../../assets/images/twitter.svg'
+import inst from '../../assets/images/inst.svg'
 import './s.css'
 import Logo from '../Logo/Logo'
 

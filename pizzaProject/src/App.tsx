@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import s from './assets/styles/App.module.css'
-import back from './assets/back2.svg'
+import back from './assets/images/back2.svg'
 import MainPage from './components/MainPage/MainPage'
 import SelectPizzaContainer from './components/SelectPizza/SelectPizzaContainer'
 import OrderPizzaContainer from './components/OrderPizza/OrderPizzaContainer'
