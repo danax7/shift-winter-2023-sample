@@ -12,7 +12,6 @@
 }
 
 .top {
-	width: 90%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -21,7 +20,6 @@
 .bottom {
 	margin-top: 30px;
 	display: flex;
-	width: 51%;
 	justify-content: space-between;
 }
 
@@ -109,24 +107,25 @@
 	color: white;
 }
 
-/* input[type='text'] {
-	position: relative;
+
+.section input[type='checkbox'],
+.section label {
+	cursor: pointer;
+	margin-left: 30px;
 }
 
-input[type='text']:after {
-	content: 'lalal';
-	position: absolute;
-	top: -20px;
-	left: 0;
-	width: 100px;
-	height: 20px;
-	color: white;
-	background-color: black;
-} */
 
+.mid {
+	width: 214px;
+	margin-left: 30px;
+}
 
+.little {
+	width: 76px;
+	margin-left: 30px;
+}
 
-input[type='checkbox'],
-label {
-	cursor: pointer;
+.apartment {
+	width: 124px;
+	margin-left: 30px;
 }

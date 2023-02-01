@@ -31,10 +31,10 @@ const OrderForm = ({ onOrderSubmit, orderedPizzas }: IOrderFormProps) => {
 								inputName='lastname' placeholder='Фамилия' />
 
 							<ErrorField value={formik.values.firstname} error={formik.errors.firstname} handleChange={formik.handleChange}
-								inputName='firstname' placeholder='Имя' />
+								inputName='firstname' placeholder='Имя' inputClass={s.mid} />
 
 							<input type="text" name='patronymic' onChange={formik.handleChange} disabled={formik.values.nonePatronymic}
-								value={formik.values.patronymic} placeholder='Отчество' />
+								value={formik.values.patronymic} placeholder='Отчество' className={s.mid} />
 							<div className={s.errorWrapper}>
 								<input type="checkbox" id='nonePatronymic' name="nonePatronymic" onChange={formik.handleChange} checked={formik.values.nonePatronymic} />
 								<label htmlFor='nonePatronymic'>нет отчества</label>
@@ -47,7 +47,7 @@ const OrderForm = ({ onOrderSubmit, orderedPizzas }: IOrderFormProps) => {
 								inputName='phoneNumber' placeholder='Телефон' />
 
 							<ErrorField value={formik.values.birthDate} error={formik.errors.birthDate} handleChange={formik.handleChange}
-								inputName='birthDate' placeholder='Дата рождения' />
+								inputName='birthDate' placeholder='Дата рождения' inputClass={s.mid} />
 						</div>
 					</div>
 				</div>
@@ -59,10 +59,10 @@ const OrderForm = ({ onOrderSubmit, orderedPizzas }: IOrderFormProps) => {
 								inputName='city' placeholder='Город' />
 
 							<ErrorField value={formik.values.street} error={formik.errors.street} handleChange={formik.handleChange}
-								inputName='street' placeholder='Улица' />
+								inputName='street' placeholder='Улица' inputClass={s.mid} />
 
 							<ErrorField value={formik.values.house} error={formik.errors.house} handleChange={formik.handleChange}
-								inputName='house' placeholder='Дом' />
+								inputName='house' placeholder='Дом' inputClass={s.little} />
 
 							<input type="text" className={s.apartment} name='apartment' disabled={formik.values.noneApartment}
 								onChange={formik.handleChange} value={formik.values.apartment} placeholder='Квартира' />

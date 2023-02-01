@@ -26,6 +26,7 @@ export const getPizzas = () => {
 			.then(raw => raw.json())
 			.then(pizza => {
 				dispatch(setPizzas(pizza))
+				console.log(pizza)
 			})
 			.catch((err) => dispatch(setErrorGet()))
 			.finally(() => dispatch(setLoaded()))
