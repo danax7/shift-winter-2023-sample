@@ -1,11 +1,3 @@
-import { IOrderPageState } from '@redux/reducers/order/types'
-import { ISelectPageState } from '@redux/reducers/select/types'
-
-export interface IState {
-    selectPage: ISelectPageState
-    orderPage: IOrderPageState
-}
-
 export interface IAction {
     type: string
     payload?: any

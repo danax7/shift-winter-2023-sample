@@ -23,15 +23,10 @@
         "ecmaVersion": "latest",
         "sourceType": "module",
         "tsconfigRootDir": "pizzaProject",
-        "project": [
-            "tsconfig.json"
-        ]
+        "project": ["tsconfig.json"]
     },
     // Configuring third-party plugins
-    "plugins": [
-        "react",
-        "@typescript-eslint"
-    ],
+    "plugins": ["react", "@typescript-eslint"],
     // Resolve imports
     "settings": {
         "import/resolver": {
@@ -43,6 +38,7 @@
             "version": "18.x"
         }
     },
+
     "rules": {
         "linebreak-style": "off",
         // Disallow the `any` type.
@@ -56,10 +52,37 @@
                 }
             }
         ],
+        "prettier/prettier": [
+            "error",
+            {
+                "semi": false,
+                "printWidth": 120,
+                "endOfLine": "lf",
+                "singleQuote": true,
+                "tabWidth": 4,
+                "indentStyle": "space",
+                "useTabs": false,
+                "trailingComma": "none",
+                "importOrder": [
+                    "^@components/(.*)$",
+                    "^\\.(/[a-zA-Z]+)+$",
+                    "^@redux/(.*)$",
+                    "^@mainTypes/(.*)$",
+                    "^@assets/.*$",
+                    "./s.module.css",
+                    "s.css",
+                    "^[./]"
+                ],
+                "importOrderSeparation": false,
+                "importOrderSortSpecifiers": true,
+                "importOrderCaseInsensitive": true,
+                "importOrderGroupNamespaceSpecifiers": true
+            }
+        ],
         "react-hooks/exhaustive-deps": "off",
         // Enforce the use of the shorthand syntax.
         "object-shorthand": "error",
         "no-console": "warn",
-        "no-case-declarations": "off",
+        "no-case-declarations": "off"
     }
 }

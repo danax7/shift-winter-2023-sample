@@ -10,9 +10,9 @@ import {
 } from '@redux/reducers/order/actions'
 import { getSinglePizza } from '@redux/reducers/select/actions'
 import { StateType } from '@redux/store'
-import { IAction, IPizzaOrder, IState } from '@mainTypes/types'
+import { IAction, IPizzaOrder } from '@mainTypes/types'
 
-const mapStateToProps = (state: IState) => ({
+const mapStateToProps = (state: StateType) => ({
     selectedPizzas: state.selectPage.selectedPizzas,
     orderedPizzas: state.orderPage.orderedPizzas,
     success: state.orderPage.success

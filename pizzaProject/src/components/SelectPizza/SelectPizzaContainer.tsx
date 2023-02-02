@@ -3,9 +3,9 @@ import { ThunkDispatch } from 'redux-thunk'
 import SelectPizza from './SelectPizza'
 import { getPizzas, togglePizza } from '@redux/reducers/select/actions'
 import { StateType } from '@redux/store'
-import { IAction, IState } from '@mainTypes/types'
+import { IAction } from '@mainTypes/types'
 
-const mapStateToProps = (state: IState) => ({
+const mapStateToProps = (state: StateType) => ({
     pizzas: state.selectPage.pizzas,
     categories: state.selectPage.categories,
     currentCategory: state.selectPage.currentCategory,
