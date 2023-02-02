@@ -1,6 +1,11 @@
 import { connect } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
-import { decreasePizzaQuantity, increasePizzaQuantity, removePizzaOrder, sendPizzaOrder } from '../../redux/reducers/order/actions'
+import {
+    decreasePizzaQuantity,
+    increasePizzaQuantity,
+    removePizzaOrder,
+    sendPizzaOrder
+} from '../../redux/reducers/order/actions'
 import { getSinglePizza } from '../../redux/reducers/select/actions'
 import { StateType } from '../../redux/store'
 import { IAction, IPizzaOrder, IState } from '../../types/genereal'

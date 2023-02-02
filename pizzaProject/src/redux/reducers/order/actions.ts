@@ -1,9 +1,8 @@
-import { IFormValues } from "../../../components/OrderForm/types"
-import { IPizzaOrder } from "../../../types/genereal"
-import { DispatchType } from "../../store"
-import { DECREASE_PIZZA_QUANTITY, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SUCCESS_ORDER } from "./actionTypes"
-import { IBackPizzaOrder, IOrderForm } from "./types"
-
+import { IFormValues } from '../../../components/OrderForm/types'
+import { IPizzaOrder } from '../../../types/genereal'
+import { DispatchType } from '../../store'
+import { DECREASE_PIZZA_QUANTITY, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SUCCESS_ORDER } from './actionTypes'
+import { IBackPizzaOrder, IOrderForm } from './types'
 
 export const increasePizzaQuantity = (id: number) => ({
     type: INCREASE_PIZZA_QUANTITY,
@@ -25,9 +24,7 @@ export const successOrder = () => ({
     type: SUCCESS_ORDER
 })
 
-
 export const sendPizzaOrder = (formValues: IFormValues, pizzas: IPizzaOrder[]) => {
-
     const formData: IOrderForm = {
         user: {
             firstname: formValues.firstname,
@@ -44,7 +41,11 @@ export const sendPizzaOrder = (formValues: IFormValues, pizzas: IPizzaOrder[]) =
         }
     }
 
-    const pizzasData: IBackPizzaOrder[] = pizzas.map((card: IPizzaOrder) => ({ id: card.pizza.id, size: 'large', crust: '' }))
+    const pizzasData: IBackPizzaOrder[] = pizzas.map((card: IPizzaOrder) => ({
+        id: card.pizza.id,
+        size: 'large',
+        crust: ''
+    }))
 
     return (dispatch: DispatchType) => {
         fetch(`https://shift-winter-2023-backend.onrender.com/api/pizza/createOrder`, {
@@ -54,7 +55,7 @@ export const sendPizzaOrder = (formValues: IFormValues, pizzas: IPizzaOrder[]) =
                 'content-type': 'application/json'
             }
         })
-            .catch(err => dispatch({ type: '__ERROR__' }))
+            .catch((err) => dispatch({ type: '__ERROR__' }))
             .finally(() => dispatch(successOrder()))
     }
 }

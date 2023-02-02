@@ -1,4 +1,4 @@
-import { IPizza } from "../../../types/genereal"
+import { IPizza } from '../../../types/genereal'
 
 export interface ISelectPageState {
     pizzas: IPizza[]

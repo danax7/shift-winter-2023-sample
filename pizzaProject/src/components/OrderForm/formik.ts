@@ -1,5 +1,5 @@
-import { IFormErrors, IFormValues } from "./types";
-import { cityRegexp, dateRegexp, houseRegexp, nameRegexp, phoneRegexp, streetRegexp } from "./regexp";
+import { IFormErrors, IFormValues } from './types'
+import { cityRegexp, dateRegexp, houseRegexp, nameRegexp, phoneRegexp, streetRegexp } from './regexp'
 
 export const defaultValues: IFormValues = {
     lastname: '',
@@ -13,19 +13,24 @@ export const defaultValues: IFormValues = {
     house: '',
     apartment: '',
     noneApartment: false,
-    comment: '',
+    comment: ''
 }
 
 export const getErrors = (values: IFormValues): IFormErrors => {
     let errors: IFormErrors = {}
 
-
-    Object.keys(values).forEach(key => {
-        if (values[key] === '' && key !== 'comment' && key !== 'nonePatronymic' && key !== 'noneApartment' && key !== 'patronymic' && key !== 'apartment') {
+    Object.keys(values).forEach((key) => {
+        if (
+            values[key] === '' &&
+            key !== 'comment' &&
+            key !== 'nonePatronymic' &&
+            key !== 'noneApartment' &&
+            key !== 'patronymic' &&
+            key !== 'apartment'
+        ) {
             errors[key] = 'заполните поле'
         }
     })
-
 
     if (!values.patronymic && !values.nonePatronymic) {
         errors.patronymic = 'введите отчество или поставте галочку'

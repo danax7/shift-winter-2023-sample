@@ -1,5 +1,5 @@
-import { IPizzaOrder } from "../../types/genereal";
-import { IFormValues } from "../OrderForm/types";
+import { IPizzaOrder } from '../../types/genereal'
+import { IFormValues } from '../OrderForm/types'
 
 export interface IOrderPizzaDispatchProps {
     getSinglePizza: (id: number) => void
@@ -10,8 +10,8 @@ export interface IOrderPizzaDispatchProps {
 }
 
 export interface IOrderPizzaProps {
-    selectedPizzas: number[],
-    orderedPizzas: IPizzaOrder[],
-    callbacks: IOrderPizzaDispatchProps,
-    success: boolean,
+    selectedPizzas: number[]
+    orderedPizzas: IPizzaOrder[]
+    callbacks: IOrderPizzaDispatchProps
+    success: boolean
 }

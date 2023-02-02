@@ -4,8 +4,8 @@ import FooterComponent from '../Footer/Footer'
 import SuccessOrder from '../SuccessOrder/SuccessOrder'
 import OrderList from '../OrderList/OrderList'
 import OrderForm from '../OrderForm/OrderForm'
-import s from './s.module.css'
 import { IOrderPizzaProps } from './types'
+import s from './s.module.css'
 
 const OrderPizza = ({ selectedPizzas, orderedPizzas, success, callbacks }: IOrderPizzaProps) => {
     useEffect(() => {

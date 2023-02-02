@@ -1,4 +1,4 @@
-import { IPizza } from "../../types/genereal";
+import { IPizza } from '../../types/genereal'
 
 export interface IPizzaCardProps {
     pizza: IPizza
@@ -7,7 +7,7 @@ export interface IPizzaCardProps {
 }
 
 export interface IPizzaListProps {
-    pizzas: IPizza[],
-    selectedPizzas: number[],
+    pizzas: IPizza[]
+    selectedPizzas: number[]
     togglePizza: (id: number) => void
 }

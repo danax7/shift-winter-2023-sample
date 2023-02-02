@@ -12,7 +12,6 @@ const mapStateToProps = (state: IState): IStateHeaderProps => {
     }
 }
 
-
 const HeaderContainer = connect(mapStateToProps)(HeaderComponent)
 
 export default HeaderContainer

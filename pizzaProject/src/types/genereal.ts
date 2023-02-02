@@ -1,5 +1,5 @@
-import { IOrderPageState } from "../redux/reducers/order/types"
-import { ISelectPageState } from "../redux/reducers/select/types"
+import { IOrderPageState } from '../redux/reducers/order/types'
+import { ISelectPageState } from '../redux/reducers/select/types'
 
 export interface IState {
     selectPage: ISelectPageState
@@ -35,9 +35,8 @@ export interface IPizza {
     }
 }
 
-
 export interface IPizzaOrder {
-    pizza: IPizza,
-    quantity: number,
+    pizza: IPizza
+    quantity: number
     price: number
 }

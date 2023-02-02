@@ -45,22 +45,8 @@
     },
     "rules": {
         "linebreak-style": "off",
-        // Configure prettier
-        "prettier/prettier": [
-            "error",
-            {
-                "semi": false,
-                "printWidth": 120,
-                "endOfLine": "lf",
-                "singleQuote": true,
-                "tabWidth": 4,
-                "indentStyle": "space",
-                "useTabs": false,
-                "trailingComma": "es6"
-            }
-        ],
         // Disallow the `any` type.
-        "@typescript-eslint/no-explicit-any": "warn",
+        // "@typescript-eslint/no-explicit-any": "warn",
         "@typescript-eslint/ban-types": [
             "error",
             {
@@ -73,6 +59,7 @@
         "react-hooks/exhaustive-deps": "off",
         // Enforce the use of the shorthand syntax.
         "object-shorthand": "error",
-        "no-console": "warn"
+        "no-console": "warn",
+        "no-case-declarations": "off",
     }
 }

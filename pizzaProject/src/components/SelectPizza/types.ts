@@ -1,5 +1,4 @@
-import { IPizza } from "../../types/genereal"
-
+import { IPizza } from '../../types/genereal'
 
 export interface ISelectPizzaProps {
     pizzas: IPizza[]

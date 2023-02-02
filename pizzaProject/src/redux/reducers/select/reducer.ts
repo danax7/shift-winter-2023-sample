@@ -1,6 +1,6 @@
-import { IAction } from "../../../types/genereal"
-import { GET_PIZZAS, SET_ERROR_GET, SET_PIZZA_LOADED, TOGGLE_PIZZA } from "./actionTypes"
-import { ISelectPageState } from "./types"
+import { IAction } from '../../../types/genereal'
+import { GET_PIZZAS, SET_ERROR_GET, SET_PIZZA_LOADED, TOGGLE_PIZZA } from './actionTypes'
+import { ISelectPageState } from './types'
 
 const initialState: ISelectPageState = {
     pizzas: [],
@@ -12,33 +12,29 @@ const initialState: ISelectPageState = {
 }
 
 const selectReducer = (state = initialState, action: IAction): ISelectPageState => {
-
     switch (action.type) {
         case GET_PIZZAS:
-
             return {
                 ...state,
                 pizzas: action.payload
             }
 
         case SET_ERROR_GET:
-
             return {
                 ...state,
                 errorLoading: true
             }
 
         case SET_PIZZA_LOADED:
-
             return {
                 ...state,
                 pizzasLoaded: true
             }
 
         case TOGGLE_PIZZA:
-            let duplicate: boolean = false
+            let duplicate = false
 
-            state.selectedPizzas.forEach(id => {
+            state.selectedPizzas.forEach((id) => {
                 if (id === action.payload) {
                     duplicate = true
                 }
@@ -47,7 +43,7 @@ const selectReducer = (state = initialState, action: IAction): ISelectPageState 
             if (duplicate) {
                 return {
                     ...state,
-                    selectedPizzas: state.selectedPizzas.filter(id => id !== action.payload)
+                    selectedPizzas: state.selectedPizzas.filter((id) => id !== action.payload)
                 }
             }
 
@@ -60,6 +56,5 @@ const selectReducer = (state = initialState, action: IAction): ISelectPageState 
             return state
     }
 }
-
 
 export default selectReducer

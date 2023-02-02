@@ -1,22 +1,22 @@
-import { IPizzaOrder } from "../../../types/genereal"
+import { IPizzaOrder } from '../../../types/genereal'
 
 export interface IOrderPageState {
-    orderedPizzas: IPizzaOrder[],
+    orderedPizzas: IPizzaOrder[]
     success: boolean
 }
 
 export interface IUser {
-    firstname: string,
-    lastname: string,
-    birthDate: string,
+    firstname: string
+    lastname: string
+    birthDate: string
     registrationAddress: string
 }
 
 export interface IAddress {
-    city: string,
-    street: string,
-    house: string,
-    apartment: string,
+    city: string
+    street: string
+    house: string
+    apartment: string
     comment: string
 }
 
@@ -26,7 +26,7 @@ export interface IOrderForm {
 }
 
 export interface IBackPizzaOrder {
-    id: number,
-    size: string,
+    id: number
+    size: string
     crust: string
 }

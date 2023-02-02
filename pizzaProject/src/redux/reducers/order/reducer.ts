@@ -1,7 +1,7 @@
-import { IAction } from "../../../types/genereal";
-import { SET_SINGLE_PIZZA } from "../select/actionTypes";
-import { DECREASE_PIZZA_QUANTITY, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SUCCESS_ORDER } from "./actionTypes";
-import { IOrderPageState } from "./types";
+import { IAction } from '../../../types/genereal'
+import { SET_SINGLE_PIZZA } from '../select/actionTypes'
+import { DECREASE_PIZZA_QUANTITY, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SUCCESS_ORDER } from './actionTypes'
+import { IOrderPageState } from './types'
 
 const initialState: IOrderPageState = {
     orderedPizzas: [],
@@ -9,7 +9,6 @@ const initialState: IOrderPageState = {
 }
 
 const orderReducer = (state = initialState, action: IAction): IOrderPageState => {
-
     switch (action.type) {
         case SET_SINGLE_PIZZA:
             const pizzaPrice = action.payload?.price.default
@@ -21,11 +20,11 @@ const orderReducer = (state = initialState, action: IAction): IOrderPageState =>
             }
 
         case INCREASE_PIZZA_QUANTITY:
-            const increasedOrder = state.orderedPizzas.map(card => {
+            const increasedOrder = state.orderedPizzas.map((card) => {
                 if (card.pizza.id === action.payload) {
                     return { ...card, quantity: card.quantity + 1, price: card.price + card.pizza.price.default }
                 }
-                return card;
+                return card
             })
 
             return {
@@ -34,12 +33,11 @@ const orderReducer = (state = initialState, action: IAction): IOrderPageState =>
             }
 
         case DECREASE_PIZZA_QUANTITY:
-
-            const decreasedOrder = state.orderedPizzas.map(card => {
+            const decreasedOrder = state.orderedPizzas.map((card) => {
                 if (card.pizza.id === action.payload && card.quantity > 1) {
                     return { ...card, quantity: card.quantity - 1, price: card.price - card.pizza.price.default }
                 }
-                return card;
+                return card
             })
 
             return {
@@ -48,10 +46,9 @@ const orderReducer = (state = initialState, action: IAction): IOrderPageState =>
             }
 
         case REMOVE_PIZZA_ORDER:
-
             return {
                 ...state,
-                orderedPizzas: state.orderedPizzas.filter(card => card.pizza.id !== action.payload)
+                orderedPizzas: state.orderedPizzas.filter((card) => card.pizza.id !== action.payload)
             }
 
         case SUCCESS_ORDER:
@@ -64,6 +61,5 @@ const orderReducer = (state = initialState, action: IAction): IOrderPageState =>
             return state
     }
 }
-
 
 export default orderReducer
