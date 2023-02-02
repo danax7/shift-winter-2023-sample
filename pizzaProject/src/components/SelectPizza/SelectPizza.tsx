@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
-import HeaderContainer from '../Header/HeaderContainer'
-import Categories from '../ Categories/Categories'
-import FooterComponent from '../Footer/Footer'
-import PizzaList from '../PizzaList/PizzaList'
+import Categories from '@components/ Categories/Categories'
+import FooterComponent from '@components/Footer/Footer'
+import HeaderContainer from '@components/Header/HeaderContainer'
+import PizzaList from '@components/PizzaList/PizzaList'
 import { ISelectPizzaProps } from './types'
 import s from './s.module.css'
 

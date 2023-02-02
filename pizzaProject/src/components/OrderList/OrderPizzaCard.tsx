@@ -11,9 +11,7 @@ const OrderPizzaCard = ({ pizzaCard, success, callbacks }: IOrderPizzaCardProps)
             <span></span>
         </div>
         <div className={[s.price, 'price'].join(' ')}>{pizzaCard.price} ₽</div>
-        {success ? (
-            ''
-        ) : (
+        {!success && (
             <div className={s.actions}>
                 <div className={s.quantityActions}>
                     <div onClick={() => callbacks.decreaseQuantity(pizzaCard.pizza.id)} className={s.decrease}></div>

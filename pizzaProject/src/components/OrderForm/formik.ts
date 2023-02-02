@@ -1,5 +1,5 @@
-import { IFormErrors, IFormValues } from './types'
 import { cityRegexp, dateRegexp, houseRegexp, nameRegexp, phoneRegexp, streetRegexp } from './regexp'
+import { IFormErrors, IFormValues } from './types'
 
 export const defaultValues: IFormValues = {
     lastname: '',

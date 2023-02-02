@@ -1,6 +1,6 @@
-import { IPizza } from '@mainTypes/types'
-import { DispatchType } from '@redux/store'
 import { GET_PIZZAS, SET_ERROR_GET, SET_PIZZA_LOADED, SET_SINGLE_PIZZA, TOGGLE_PIZZA } from './actionTypes'
+import { DispatchType } from '@redux/store'
+import { IPizza } from '@mainTypes/types'
 
 export const setPizzas = (pizza: IPizza) => ({
     type: GET_PIZZAS,

@@ -1,6 +1,6 @@
-import { IAction } from '@mainTypes/types'
 import { GET_PIZZAS, SET_ERROR_GET, SET_PIZZA_LOADED, TOGGLE_PIZZA } from './actionTypes'
 import { ISelectPageState } from './types'
+import { IAction } from '@mainTypes/types'
 
 const initialState: ISelectPageState = {
     pizzas: [],

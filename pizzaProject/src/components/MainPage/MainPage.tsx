@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import HeaderContainer from '../Header/HeaderContainer'
+import HeaderContainer from '@components/Header/HeaderContainer'
 import s from './s.module.css'
 
 const MainPage = () => (

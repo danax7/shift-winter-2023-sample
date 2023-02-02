@@ -1,5 +1,5 @@
+import { IFormValues } from '@components/OrderForm/types'
 import { IPizzaOrder } from '@mainTypes/types'
-import { IFormValues } from '../OrderForm/types'
 
 export interface IOrderPizzaDispatchProps {
     getSinglePizza: (id: number) => void

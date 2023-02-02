@@ -1,5 +1,5 @@
-import s from './s.module.css'
 import perez from '@assets/images/perez.png'
+import s from './s.module.css'
 
 const SuccessOrder = () => {
     return (

@@ -1,5 +1,5 @@
-import { IOrderPageState } from '../redux/reducers/order/types'
-import { ISelectPageState } from '../redux/reducers/select/types'
+import { IOrderPageState } from '@redux/reducers/order/types'
+import { ISelectPageState } from '@redux/reducers/select/types'
 
 export interface IState {
     selectPage: ISelectPageState

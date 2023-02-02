@@ -1,16 +1,18 @@
+import { ICategoriesProps } from './types'
 import s from './s.module.css'
 
-interface ICategoriesProps {
-    categories: string[]
-    currentCategory: string
-}
-
 const Categories = ({ categories, currentCategory }: ICategoriesProps) => {
-    const categoriesBtns = categories.map((category, index) => (
-        <div className={[s.item, category === currentCategory ? s.current : ''].join(' ')} key={index}>
-            {category}
-        </div>
-    ))
+    let classNames: string
+
+    const categoriesBtns = categories.map((category, index) => {
+        classNames = [s.item, category === currentCategory && s.current].join(' ')
+
+        return (
+            <div className={classNames} key={index}>
+                {category}
+            </div>
+        )
+    })
 
     return <ul className={s.list}>{categoriesBtns}</ul>
 }

@@ -1,8 +1,8 @@
 import { IFormValues } from '@components/OrderForm/types'
-import { IPizzaOrder } from '@mainTypes/types'
-import { DispatchType } from '@redux/store'
 import { DECREASE_PIZZA_QUANTITY, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SUCCESS_ORDER } from './actionTypes'
 import { IBackPizzaOrder, IOrderForm } from './types'
+import { DispatchType } from '@redux/store'
+import { IPizzaOrder } from '@mainTypes/types'
 
 export const increasePizzaQuantity = (id: number) => ({
     type: INCREASE_PIZZA_QUANTITY,

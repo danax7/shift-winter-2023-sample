@@ -1,6 +1,6 @@
 import PizzaCard from './PizzaCard'
-import s from './s.module.css'
 import { IPizzaListProps } from './types'
+import s from './s.module.css'
 
 const PizzaList = ({ pizzas, selectedPizzas, togglePizza }: IPizzaListProps) => {
     const pizzaCards = pizzas.map((pizza) => (
