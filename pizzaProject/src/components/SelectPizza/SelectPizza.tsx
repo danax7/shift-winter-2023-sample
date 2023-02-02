@@ -1,23 +1,14 @@
 import { useEffect } from 'react'
-import s from './s.module.css'
 import HeaderContainer from '../Header/HeaderContainer'
 import Categories from '../ Categories/Categories'
 import FooterComponent from '../Footer/Footer'
-import { IPizza } from '../../types/selectPageInterfaces'
 import PizzaList from '../PizzaList/PizzaList'
+import { ISelectPizzaProps } from './types'
+import s from './s.module.css'
 
-interface ISelectPizzaProps {
-    pizzas: IPizza[]
-    getPizzas: () => void
-    togglePizza: (id: number) => void
-    categories: string[]
-    currentCategory: string
-    isLoaded: boolean
-    errorLoading: boolean
-    selectedPizzas: number[]
-}
 
-const SelectPizza = ({ getPizzas, togglePizza, pizzas, categories, currentCategory, isLoaded, errorLoading, selectedPizzas }: ISelectPizzaProps) => {
+const SelectPizza = (props: ISelectPizzaProps) => {
+    const { getPizzas, togglePizza, pizzas, categories, currentCategory, isLoaded, errorLoading, selectedPizzas } = props
 
     useEffect(() => {
         if (!isLoaded) {

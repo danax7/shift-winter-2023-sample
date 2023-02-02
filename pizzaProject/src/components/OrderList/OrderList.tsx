@@ -1,11 +1,5 @@
-import { IOrderPizzaDispatchProps, IPizzaOrder } from '../../types/orderPageIntarfaces'
 import OrderPizzaCard from './OrderPizzaCard'
-
-interface IOrderListProps {
-    pizzas: IPizzaOrder[],
-    success: boolean,
-    callbacks: IOrderPizzaDispatchProps
-}
+import { IOrderListProps } from './types'
 
 
 const OrderList = ({ pizzas, success, callbacks }: IOrderListProps) => {

@@ -1,4 +1,4 @@
-import { IPizza } from "../../../types/genereal"
+import { IPizzaOrder } from "../../../types/genereal"
 
 export interface IOrderPageState {
     orderedPizzas: IPizzaOrder[],
@@ -24,8 +24,6 @@ export interface IOrderForm {
     user: IUser
     address: IAddress
 }
-
-
 
 export interface IBackPizzaOrder {
     id: number,

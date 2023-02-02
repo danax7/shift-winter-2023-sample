@@ -1,11 +1,11 @@
 import { connect } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
-import { IAction } from '../../types/genereal'
-import { IOrderPizzaDispatchProps, IPizzaOrder, IValues } from '../../types/orderPageIntarfaces'
-import { decreasePizzaQuantity, getSinglePizza, increasePizzaQuantity, removePizzaOrder, sendPizzaOrder } from '../../redux/actions'
-import { IState, stateType } from '../../redux/store'
+import { decreasePizzaQuantity, increasePizzaQuantity, removePizzaOrder, sendPizzaOrder } from '../../redux/reducers/order/actions'
+import { getSinglePizza } from '../../redux/reducers/select/actions'
+import { StateType } from '../../redux/store'
+import { IAction, IPizzaOrder, IState } from '../../types/genereal'
+import { IFormValues } from '../OrderForm/types'
 import OrderPizza from './OrderPizza'
-
 
 const mapStateToProps = (state: IState) => {
     return {
@@ -15,25 +15,16 @@ const mapStateToProps = (state: IState) => {
     }
 }
 
-
-
-const mapDispatchToProps = (dispatch: ThunkDispatch<stateType, void, IAction>): { callbacks: IOrderPizzaDispatchProps } => {
+const mapDispatchToProps = (dispatch: ThunkDispatch<StateType, void, IAction>) => {
     return {
         callbacks: {
             getSinglePizza: (id: number) => dispatch(getSinglePizza(id)),
             increaseQuantity: (id: number) => dispatch(increasePizzaQuantity(id)),
             decreaseQuantity: (id: number) => dispatch(decreasePizzaQuantity(id)),
             removePizzaOrder: (id: number) => dispatch(removePizzaOrder(id)),
-            createOrder: (form: IValues, pizzas: IPizzaOrder[]) => dispatch(sendPizzaOrder(form, pizzas))
+            createOrder: (form: IFormValues, pizzas: IPizzaOrder[]) => dispatch(sendPizzaOrder(form, pizzas))
         }
     }
-}
-
-export interface IOrderPizzaProps {
-    selectedPizzas: number[],
-    orderedPizzas: IPizzaOrder[],
-    callbacks: IOrderPizzaDispatchProps,
-    success: boolean,
 }
 
 const OrderPizzaContainer = connect(mapStateToProps, mapDispatchToProps)(OrderPizza)

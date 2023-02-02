@@ -1,13 +1,6 @@
-import { IPizza } from '../../types/selectPageInterfaces'
 import PizzaCard from './PizzaCard'
 import s from './s.module.css'
-
-interface IPizzaListProps {
-    pizzas: IPizza[],
-    selectedPizzas: number[],
-    togglePizza: (id: number) => void
-}
-
+import { IPizzaListProps } from './types'
 
 const PizzaList = ({ pizzas, selectedPizzas, togglePizza }: IPizzaListProps) => {
 

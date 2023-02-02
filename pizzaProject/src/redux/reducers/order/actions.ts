@@ -1,6 +1,8 @@
+import { IFormValues } from "../../../components/OrderForm/types"
+import { IPizzaOrder } from "../../../types/genereal"
 import { DispatchType } from "../../store"
 import { DECREASE_PIZZA_QUANTITY, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SUCCESS_ORDER } from "./actionTypes"
-import { IBackPizzaOrder, IFormValues, IOrderForm, IPizzaOrder } from "./types"
+import { IBackPizzaOrder, IOrderForm } from "./types"
 
 
 export const increasePizzaQuantity = (id: number) => ({

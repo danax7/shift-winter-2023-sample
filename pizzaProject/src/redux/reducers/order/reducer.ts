@@ -1,6 +1,7 @@
 import { IAction } from "../../../types/genereal";
-import { IOrderPageState } from "../../../types/orderPageIntarfaces";
-import { DECREASE_PIZZA_QUANTITY, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SET_SINGLE_PIZZA, SUCCESS_ORDER } from "../../actionTypes";
+import { SET_SINGLE_PIZZA } from "../select/actionTypes";
+import { DECREASE_PIZZA_QUANTITY, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SUCCESS_ORDER } from "./actionTypes";
+import { IOrderPageState } from "./types";
 
 const initialState: IOrderPageState = {
     orderedPizzas: [],
