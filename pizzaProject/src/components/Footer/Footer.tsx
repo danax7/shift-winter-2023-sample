@@ -1,8 +1,8 @@
-import facebook from '../../assets/images/facebook.svg'
-import twitter from '../../assets/images/twitter.svg'
-import inst from '../../assets/images/inst.svg'
-import './s.css'
 import Logo from '../Logo/Logo'
+import facebook from '@assets/images/facebook.svg'
+import twitter from '@assets/images/twitter.svg'
+import inst from '@assets/images/inst.svg'
+import './s.css'
 
 const FooterComponent = () => {
     return (

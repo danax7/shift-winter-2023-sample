@@ -1,9 +1,9 @@
+import { IAction, IState } from '@mainTypes/types'
+import { getPizzas, togglePizza } from '@redux/reducers/select/actions'
+import { StateType } from '@redux/store'
 import { connect } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
 import SelectPizza from './SelectPizza'
-import { IAction, IState } from '../../types/genereal'
-import { StateType } from '../../redux/store'
-import { getPizzas, togglePizza } from '../../redux/reducers/select/actions'
 
 const mapStateToProps = (state: IState) => {
     return {

@@ -1,4 +1,4 @@
-import add from '../../assets/images/add.svg'
+import add from '@assets/images/add.svg'
 import s from './s.module.css'
 import { IPizzaCardProps } from './types'
 

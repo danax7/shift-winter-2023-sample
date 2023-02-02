@@ -1,5 +1,5 @@
+import { IState } from '@mainTypes/types'
 import { connect } from 'react-redux'
-import { IState } from '../../types/genereal'
 import HeaderComponent from './Header'
 
 export interface IStateHeaderProps {

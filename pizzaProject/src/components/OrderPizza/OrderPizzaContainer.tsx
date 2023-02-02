@@ -1,14 +1,15 @@
 import { connect } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
+import { IAction, IPizzaOrder, IState } from '@mainTypes/types'
 import {
     decreasePizzaQuantity,
     increasePizzaQuantity,
     removePizzaOrder,
     sendPizzaOrder
-} from '../../redux/reducers/order/actions'
-import { getSinglePizza } from '../../redux/reducers/select/actions'
-import { StateType } from '../../redux/store'
-import { IAction, IPizzaOrder, IState } from '../../types/genereal'
+} from '@redux/reducers/order/actions'
+import { getSinglePizza } from '@redux/reducers/select/actions'
+import { StateType } from '@redux/store'
+
 import { IFormValues } from '../OrderForm/types'
 import OrderPizza from './OrderPizza'
 

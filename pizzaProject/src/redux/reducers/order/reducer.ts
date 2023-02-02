@@ -1,4 +1,4 @@
-import { IAction } from '../../../types/genereal'
+import { IAction } from '@mainTypes/types'
 import { SET_SINGLE_PIZZA } from '../select/actionTypes'
 import { DECREASE_PIZZA_QUANTITY, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SUCCESS_ORDER } from './actionTypes'
 import { IOrderPageState } from './types'
