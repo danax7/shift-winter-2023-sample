@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
-import { IFormValues } from '@components/OrderForm/types'
+import { IOrderFormValues } from '@components/OrderForm/types'
 import OrderPizza from './OrderPizza'
 import {
     decreasePizzaQuantity,
@@ -24,7 +24,7 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<StateType, void, IAction>) =
         increaseQuantity: (id: number) => dispatch(increasePizzaQuantity(id)),
         decreaseQuantity: (id: number) => dispatch(decreasePizzaQuantity(id)),
         removePizzaOrder: (id: number) => dispatch(removePizzaOrder(id)),
-        createOrder: (form: IFormValues, pizzas: IPizzaOrder[]) => dispatch(sendPizzaOrder(form, pizzas))
+        createOrder: (form: IOrderFormValues, pizzas: IPizzaOrder[]) => dispatch(sendPizzaOrder(form, pizzas))
     }
 })
 

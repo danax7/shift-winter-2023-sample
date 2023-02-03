@@ -4,7 +4,7 @@ import { IStateHeaderProps } from './types'
 import s from './s.module.css'
 
 const HeaderComponent = ({ orderQuantity }: IStateHeaderProps) => {
-    const showOrderQuantity = orderQuantity && ` (${orderQuantity})`
+    const showOrderQuantity = !!orderQuantity && ` (${orderQuantity})`
 
     return (
         <div className="box">

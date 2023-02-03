@@ -12,11 +12,10 @@ const orderReducer = (state = initialState, action: IAction): IOrderPageState =>
     switch (action.type) {
         case SET_SINGLE_PIZZA:
             const pizzaPrice = action.payload?.price.default
-            const orderedPizzas = [...state.orderedPizzas, { pizza: action.payload, quantity: 1, price: pizzaPrice }]
 
             return {
                 ...state,
-                orderedPizzas: orderedPizzas
+                orderedPizzas: [...state.orderedPizzas, { pizza: action.payload, quantity: 1, price: pizzaPrice }]
             }
 
         case INCREASE_PIZZA_QUANTITY:

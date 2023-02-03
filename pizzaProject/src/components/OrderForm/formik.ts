@@ -1,7 +1,7 @@
 import { cityRegexp, dateRegexp, houseRegexp, nameRegexp, phoneRegexp, streetRegexp } from './regexp'
-import { IFormErrors, IFormValues } from './types'
+import { IOrderFormErrors, IOrderFormValues } from './types'
 
-export const defaultValues: IFormValues = {
+export const defaultValues: IOrderFormValues = {
     lastname: '',
     firstname: '',
     patronymic: '',
@@ -16,8 +16,8 @@ export const defaultValues: IFormValues = {
     comment: ''
 }
 
-export const getErrors = (values: IFormValues): IFormErrors => {
-    let errors: IFormErrors = {}
+export const getErrors = (values: IOrderFormValues): IOrderFormErrors => {
+    const errors: IOrderFormErrors = {}
 
     Object.keys(values).forEach((key) => {
         if (

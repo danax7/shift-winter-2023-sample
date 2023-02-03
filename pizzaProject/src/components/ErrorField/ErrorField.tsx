@@ -11,7 +11,7 @@ const ErrorField = ({ handleChange, value, error, inputName, placeholder, inputC
             value={value}
             placeholder={placeholder}
         />
-        {error && <span className={s.error}>{error} </span>}
+        {!!error && <span className={s.error}>{error} </span>}
     </div>
 )
 

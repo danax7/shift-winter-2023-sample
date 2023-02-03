@@ -4,7 +4,7 @@ export interface IFormSignature<T> {
     [key: string]: T
 }
 
-export interface IFormValues extends IFormSignature<string | boolean> {
+export interface IOrderFormValues extends IFormSignature<string | boolean> {
     lastname: string
     firstname: string
     patronymic: string
@@ -19,7 +19,7 @@ export interface IFormValues extends IFormSignature<string | boolean> {
     comment: string
 }
 
-export interface IFormErrors extends IFormSignature<string | undefined> {
+export interface IOrderFormErrors extends IFormSignature<string | undefined> {
     lastname?: string
     firstname?: string
     patronymic?: string
@@ -35,6 +35,6 @@ export interface IFormErrors extends IFormSignature<string | undefined> {
 }
 
 export interface IOrderFormProps {
-    onOrderSubmit: (values: IFormValues, orderedPizzas: IPizzaOrder[]) => void
+    onOrderSubmit: (values: IOrderFormValues, orderedPizzas: IPizzaOrder[]) => void
     orderedPizzas: IPizzaOrder[]
 }

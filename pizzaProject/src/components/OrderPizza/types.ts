@@ -1,4 +1,4 @@
-import { IFormValues } from '@components/OrderForm/types'
+import { IOrderFormValues } from '@components/OrderForm/types'
 import { IPizzaOrder } from '@mainTypes/types'
 
 export interface IOrderPizzaDispatchProps {
@@ -6,7 +6,7 @@ export interface IOrderPizzaDispatchProps {
     increaseQuantity: (id: number) => void
     decreaseQuantity: (id: number) => void
     removePizzaOrder: (id: number) => void
-    createOrder: (form: IFormValues, pizzas: IPizzaOrder[]) => void
+    createOrder: (form: IOrderFormValues, pizzas: IPizzaOrder[]) => void
 }
 
 export interface IOrderPizzaProps {

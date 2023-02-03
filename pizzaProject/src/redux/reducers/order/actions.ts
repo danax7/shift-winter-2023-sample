@@ -1,4 +1,4 @@
-import { IFormValues } from '@components/OrderForm/types'
+import { IOrderFormValues } from '@components/OrderForm/types'
 import { DECREASE_PIZZA_QUANTITY, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SUCCESS_ORDER } from './actionTypes'
 import { IBackPizzaOrder, IOrderForm } from './types'
 import { DispatchType } from '@redux/store'
@@ -24,7 +24,7 @@ export const successOrder = () => ({
     type: SUCCESS_ORDER
 })
 
-export const sendPizzaOrder = (formValues: IFormValues, pizzas: IPizzaOrder[]) => {
+export const sendPizzaOrder = (formValues: IOrderFormValues, pizzas: IPizzaOrder[]) => {
     const formData: IOrderForm = {
         user: {
             firstname: formValues.firstname,

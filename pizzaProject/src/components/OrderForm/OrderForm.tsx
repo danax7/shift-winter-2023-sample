@@ -1,14 +1,14 @@
 import { useFormik } from 'formik'
 import ErrorField from '@components/ErrorField/ErrorField'
 import { defaultValues, getErrors } from './formik'
-import { IFormValues, IOrderFormProps } from './types'
+import { IOrderFormProps, IOrderFormValues } from './types'
 import s from './s.module.css'
 
 const OrderForm = ({ onOrderSubmit, orderedPizzas }: IOrderFormProps) => {
     const formik = useFormik({
         validateOnChange: false,
         initialValues: defaultValues,
-        onSubmit: (values: IFormValues) => {
+        onSubmit: (values: IOrderFormValues) => {
             onOrderSubmit(values, orderedPizzas)
         },
         validate: getErrors
@@ -57,7 +57,7 @@ const OrderForm = ({ onOrderSubmit, orderedPizzas }: IOrderFormProps) => {
                                     checked={formik.values.nonePatronymic}
                                 />
                                 <label htmlFor="nonePatronymic">нет отчества</label>
-                                {formik.errors.patronymic && (
+                                {!!formik.errors.patronymic && (
                                     <span className={s.error}>{formik.errors.patronymic}</span>
                                 )}
                             </div>
@@ -133,7 +133,9 @@ const OrderForm = ({ onOrderSubmit, orderedPizzas }: IOrderFormProps) => {
                                     checked={formik.values.noneApartment}
                                 />
                                 <label htmlFor="noneApartment">нет квартиры</label>
-                                {formik.errors.apartment && <span className={s.error}>{formik.errors.apartment}</span>}
+                                {!!formik.errors.apartment && (
+                                    <span className={s.error}>{formik.errors.apartment}</span>
+                                )}
                             </div>
                         </div>
 
