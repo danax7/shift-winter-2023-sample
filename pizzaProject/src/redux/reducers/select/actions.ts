@@ -1,5 +1,6 @@
+import { instance } from '@utils/api/requests'
 import { IPizza } from '@utils/mainTypes/types'
-import axios, { AxiosResponse } from 'axios'
+import { AxiosResponse } from 'axios'
 import { GET_PIZZAS, SET_PIZZA_LOADED, SET_SINGLE_PIZZA, TOGGLE_PIZZA } from './actionTypes'
 import { DispatchType } from '@redux/store'
 
@@ -14,9 +15,7 @@ export const setLoaded = () => ({
 
 export const getPizzas = () => {
     return async (dispatch: DispatchType) => {
-        const result = await axios.get<string, AxiosResponse<IPizza[]>>(
-            'https://shift-winter-2023-backend.onrender.com/api/pizza'
-        )
+        const result = await instance.get<string, AxiosResponse<IPizza[]>>('')
 
         dispatch(setPizzas(result.data))
         dispatch(setLoaded())
@@ -35,9 +34,7 @@ export const setSinglePizza = (pizza: IPizza) => ({
 
 export const getSinglePizza = (id: number) => {
     return async (dispatch: DispatchType) => {
-        const result = await axios.get<string, AxiosResponse<IPizza>>(
-            `https://shift-winter-2023-backend.onrender.com/api/pizza/${id}`
-        )
+        const result = await instance.get<string, AxiosResponse<IPizza>>(`${id}`)
 
         dispatch(setSinglePizza(result.data))
     }

@@ -1,4 +1,4 @@
-import axios from 'axios'
+import { instance } from '@utils/api/requests'
 import { IPizzaOrder } from 'src/utils/mainTypes/types'
 import { IOrderFormValues } from '@components/OrderForm/types'
 import { DECREASE_PIZZA_QUANTITY, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SUCCESS_ORDER } from './actionTypes'
@@ -49,7 +49,7 @@ export const sendPizzaOrder = (formValues: IOrderFormValues, pizzas: IPizzaOrder
     }))
 
     return async (dispatch: DispatchType) => {
-        await axios.post(`https://shift-winter-2023-backend.onrender.com/api/pizza/createOrder`, {
+        await instance.post(`/createOrder`, {
             pizzas: pizzasData,
             details: formData
         })
