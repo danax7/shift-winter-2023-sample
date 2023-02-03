@@ -1,6 +1,6 @@
 import { IOrderFormValues } from '@pages/order/OrderForm/types'
 import { instance } from '@utils/api/axios'
-import axios, { AxiosResponse } from 'axios'
+import { AxiosResponse } from 'axios'
 import { IPizzaOrder } from 'src/utils/mainTypes/types'
 import { DECREASE_PIZZA_QUANTITY, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SUCCESS_ORDER } from './actionTypes'
 import { IBackPizzaOrder, IOrderForm } from './types'

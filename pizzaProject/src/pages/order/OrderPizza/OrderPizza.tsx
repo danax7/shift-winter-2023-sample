@@ -27,11 +27,8 @@ const OrderPizza = ({ selectedPizzas, orderedPizzas, success, callbacks }: IOrde
                         {pizzaQuantity} шт. за {pizzaPrice} ₽
                     </span>
                     <OrderList success={success} pizzas={orderedPizzas} callbacks={callbacks} />
-                    {success ? (
-                        <SuccessOrder />
-                    ) : (
-                        <OrderForm onOrderSubmit={callbacks.createOrder} orderedPizzas={orderedPizzas} />
-                    )}
+                    {success && <SuccessOrder />}
+                    {!success && <OrderForm onOrderSubmit={callbacks.createOrder} orderedPizzas={orderedPizzas} />}
                 </div>
             </div>
             <FooterComponent />

@@ -3,11 +3,12 @@ import MainPage from './pages/main/MainPage/MainPage'
 import OrderPizzaContainer from './pages/order/OrderPizza/OrderPizzaContainer'
 import SelectPizzaContainer from './pages/select/SelectPizza/SelectPizzaContainer'
 import back from '@assets/images/back.svg'
+import s from '@assets/styles/App.module.css'
 
 document.body.style.backgroundImage = `url(${back})`
 
 const App = () => (
-    <div>
+    <div className={s.App}>
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<MainPage />} />
