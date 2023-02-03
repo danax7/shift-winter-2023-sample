@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
 import { IAction, IPizzaOrder } from 'src/utils/mainTypes/types'
-import { IOrderFormValues } from '@components/OrderForm/types'
+import { IOrderFormValues } from '../OrderForm/types'
 import OrderPizza from './OrderPizza'
 import {
     decreasePizzaQuantity,

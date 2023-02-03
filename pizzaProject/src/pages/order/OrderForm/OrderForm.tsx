@@ -1,5 +1,5 @@
 import { useFormik } from 'formik'
-import ErrorField from '@components/ErrorField/ErrorField'
+import ErrorField from '../ErrorField/ErrorField'
 import { defaultValues, getErrors } from './formik'
 import { IOrderFormProps, IOrderFormValues } from './types'
 import s from './s.module.css'

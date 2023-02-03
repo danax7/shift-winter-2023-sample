@@ -1,6 +1,7 @@
-import { instance } from '@utils/api/requests'
+import { IOrderFormValues } from '@pages/order/OrderForm/types'
+import { instance } from '@utils/api/axios'
+import axios, { AxiosResponse } from 'axios'
 import { IPizzaOrder } from 'src/utils/mainTypes/types'
-import { IOrderFormValues } from '@components/OrderForm/types'
 import { DECREASE_PIZZA_QUANTITY, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SUCCESS_ORDER } from './actionTypes'
 import { IBackPizzaOrder, IOrderForm } from './types'
 import { DispatchType } from '@redux/store'
@@ -49,7 +50,7 @@ export const sendPizzaOrder = (formValues: IOrderFormValues, pizzas: IPizzaOrder
     }))
 
     return async (dispatch: DispatchType) => {
-        await instance.post(`/createOrder`, {
+        await instance.post<IBackPizzaOrder[], AxiosResponse>(`/createOrder`, {
             pizzas: pizzasData,
             details: formData
         })

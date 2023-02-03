@@ -65,7 +65,7 @@
                 "trailingComma": "none",
                 "importOrder": [
                     "^@components/(.*)$",
-                    "^\\.(/[a-zA-Z]+)+$",
+                    "^(\\.|\\.\\.)(\\.?/[a-zA-Z]+)+$",
                     "^@redux/(.*)$",
                     "^@mainTypes/(.*)$",
                     "^@assets/.*$",

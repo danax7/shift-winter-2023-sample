@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import MainPage from './components/MainPage/MainPage'
-import OrderPizzaContainer from './components/OrderPizza/OrderPizzaContainer'
-import SelectPizzaContainer from './components/SelectPizza/SelectPizzaContainer'
+import MainPage from './pages/main/MainPage/MainPage'
+import OrderPizzaContainer from './pages/order/OrderPizza/OrderPizzaContainer'
+import SelectPizzaContainer from './pages/select/SelectPizza/SelectPizzaContainer'
 import back from '@assets/images/back.svg'
 
 document.body.style.backgroundImage = `url(${back})`

@@ -1,4 +1,4 @@
-import { instance } from '@utils/api/requests'
+import { instance } from '@utils/api/axios'
 import { IPizza } from '@utils/mainTypes/types'
 import { AxiosResponse } from 'axios'
 import { GET_PIZZAS, SET_PIZZA_LOADED, SET_SINGLE_PIZZA, TOGGLE_PIZZA } from './actionTypes'

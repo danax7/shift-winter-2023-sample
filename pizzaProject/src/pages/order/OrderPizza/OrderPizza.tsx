@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 import FooterComponent from '@components/Footer/Footer'
 import HeaderContainer from '@components/Header/HeaderContainer'
-import OrderForm from '@components/OrderForm/OrderForm'
-import OrderList from '@components/OrderList/OrderList'
-import SuccessOrder from '@components/SuccessOrder/SuccessOrder'
+import OrderForm from '../OrderForm/OrderForm'
+import OrderList from '../OrderList/OrderList'
+import SuccessOrder from '../SuccessOrder/SuccessOrder'
 import { IOrderPizzaProps } from './types'
 import s from './s.module.css'
 
