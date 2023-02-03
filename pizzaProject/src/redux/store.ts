@@ -9,7 +9,6 @@ const rootReducer = combineReducers({
 })
 
 const store = createStore(rootReducer, applyMiddleware(thunk))
-// window.store = store
 
 export type StoreType = typeof store
 export type StateType = ReturnType<typeof store.getState>

@@ -79,6 +79,7 @@
                 "importOrderGroupNamespaceSpecifiers": true
             }
         ],
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
         "react-hooks/exhaustive-deps": "off",
         // Enforce the use of the shorthand syntax.
         "object-shorthand": "error",

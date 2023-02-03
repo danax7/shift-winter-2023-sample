@@ -1,4 +1,4 @@
-import { IPizzaOrder } from '@mainTypes/types'
+import { IPizzaOrder } from 'src/utils/mainTypes/types'
 
 export interface IOrderPageState {
     orderedPizzas: IPizzaOrder[]

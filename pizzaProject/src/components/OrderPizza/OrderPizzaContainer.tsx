@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
+import { IAction, IPizzaOrder } from 'src/utils/mainTypes/types'
 import { IOrderFormValues } from '@components/OrderForm/types'
 import OrderPizza from './OrderPizza'
 import {
@@ -10,7 +11,6 @@ import {
 } from '@redux/reducers/order/actions'
 import { getSinglePizza } from '@redux/reducers/select/actions'
 import { StateType } from '@redux/store'
-import { IAction, IPizzaOrder } from '@mainTypes/types'
 
 const mapStateToProps = (state: StateType) => ({
     selectedPizzas: state.selectPage.selectedPizzas,

@@ -1,4 +1,4 @@
-import { IPizza } from '@mainTypes/types'
+import { IPizza } from 'src/utils/mainTypes/types'
 
 export interface IPizzaCardProps {
     pizza: IPizza

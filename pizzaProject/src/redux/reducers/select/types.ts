@@ -1,10 +1,9 @@
-import { IPizza } from '@mainTypes/types'
+import { IPizza } from 'src/utils/mainTypes/types'
 
 export interface ISelectPageState {
     pizzas: IPizza[]
     categories: string[]
     currentCategory: string
     pizzasLoaded: boolean
-    errorLoading: boolean
     selectedPizzas: number[]
 }

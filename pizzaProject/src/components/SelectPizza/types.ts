@@ -1,4 +1,4 @@
-import { IPizza } from '@mainTypes/types'
+import { IPizza } from 'src/utils/mainTypes/types'
 
 export interface ISelectPizzaProps {
     pizzas: IPizza[]
@@ -7,6 +7,5 @@ export interface ISelectPizzaProps {
     categories: string[]
     currentCategory: string
     isLoaded: boolean
-    errorLoading: boolean
     selectedPizzas: number[]
 }

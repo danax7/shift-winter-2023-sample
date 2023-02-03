@@ -7,7 +7,7 @@ export default defineConfig({
     resolve: {
         alias: {
             '@assets': path.resolve(__dirname, './src/assets'),
-            '@mainTypes': path.resolve(__dirname, './src/mainTypes'),
+            '@utils': path.resolve(__dirname, './src/utils'),
             '@redux': path.resolve(__dirname, './src/redux'),
             '@components': path.resolve(__dirname, './src/components')
         }

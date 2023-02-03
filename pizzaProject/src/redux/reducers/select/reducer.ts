@@ -1,13 +1,12 @@
+import { IAction } from 'src/utils/mainTypes/types'
 import { GET_PIZZAS, SET_ERROR_GET, SET_PIZZA_LOADED, TOGGLE_PIZZA } from './actionTypes'
 import { ISelectPageState } from './types'
-import { IAction } from '@mainTypes/types'
 
 const initialState: ISelectPageState = {
     pizzas: [],
     categories: ['Рекомендуем', 'Без мяса', 'Сладкая', 'Акции', 'Напитки'],
     currentCategory: 'Рекомендуем',
     pizzasLoaded: false,
-    errorLoading: false,
     selectedPizzas: []
 }
 
@@ -17,12 +16,6 @@ const selectReducer = (state = initialState, action: IAction): ISelectPageState 
             return {
                 ...state,
                 pizzas: action.payload
-            }
-
-        case SET_ERROR_GET:
-            return {
-                ...state,
-                errorLoading: true
             }
 
         case SET_PIZZA_LOADED:

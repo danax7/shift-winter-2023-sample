@@ -1,6 +1,6 @@
+import { IAction } from 'src/utils/mainTypes/types'
 import { DECREASE_PIZZA_QUANTITY, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SUCCESS_ORDER } from './actionTypes'
 import { IOrderPageState } from './types'
-import { IAction } from '@mainTypes/types'
 import { SET_SINGLE_PIZZA } from '../select/actionTypes'
 
 const initialState: IOrderPageState = {
@@ -11,7 +11,18 @@ const initialState: IOrderPageState = {
 const orderReducer = (state = initialState, action: IAction): IOrderPageState => {
     switch (action.type) {
         case SET_SINGLE_PIZZA:
-            const pizzaPrice = action.payload?.price.default
+            const pizzaPrice: number = action.payload?.price.default
+            let duplicate = false
+
+            state.orderedPizzas.forEach((order) => {
+                if (order.pizza.id === action.payload.id) {
+                    duplicate = true
+                }
+            })
+
+            if (duplicate) {
+                return state
+            }
 
             return {
                 ...state,

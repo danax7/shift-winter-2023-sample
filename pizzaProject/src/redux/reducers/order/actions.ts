@@ -1,8 +1,9 @@
+import axios from 'axios'
+import { IPizzaOrder } from 'src/utils/mainTypes/types'
 import { IOrderFormValues } from '@components/OrderForm/types'
 import { DECREASE_PIZZA_QUANTITY, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SUCCESS_ORDER } from './actionTypes'
 import { IBackPizzaOrder, IOrderForm } from './types'
 import { DispatchType } from '@redux/store'
-import { IPizzaOrder } from '@mainTypes/types'
 
 export const increasePizzaQuantity = (id: number) => ({
     type: INCREASE_PIZZA_QUANTITY,
@@ -47,15 +48,12 @@ export const sendPizzaOrder = (formValues: IOrderFormValues, pizzas: IPizzaOrder
         crust: ''
     }))
 
-    return (dispatch: DispatchType) => {
-        fetch(`https://shift-winter-2023-backend.onrender.com/api/pizza/createOrder`, {
-            method: 'post',
-            body: JSON.stringify({ pizzas: pizzasData, details: formData }),
-            headers: {
-                'content-type': 'application/json'
-            }
+    return async (dispatch: DispatchType) => {
+        await axios.post(`https://shift-winter-2023-backend.onrender.com/api/pizza/createOrder`, {
+            pizzas: pizzasData,
+            details: formData
         })
-            .catch((err) => dispatch({ type: '__ERROR__' }))
-            .finally(() => dispatch(successOrder()))
+
+        dispatch(successOrder())
     }
 }
