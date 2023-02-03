@@ -108,12 +108,12 @@ const orderReducer = (state = initialState, action: IAction): IOrderPageState =>
 
         case SET_PIZZA_SIZE:
             const settedSize = state.orderedPizzas.map((card) => {
-                debugger
                 const newPrice =
                     (card.pizza.price.default +
                         (card.pizza.price.crust[card.crust] || 0) +
                         card.pizza.price.size[action.payload.size]) *
                     card.quantity
+
                 if (card.pizza.id === action.payload.id) {
                     return { ...card, size: action.payload.size, price: newPrice }
                 }
