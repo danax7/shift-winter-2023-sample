@@ -10,7 +10,6 @@ const PizzaCard = ({ pizza, isSelected, togglePizza }: IPizzaCardProps) => (
             </div>
             <div className={s.info}>
                 <span className="name">{pizza.name}</span>
-                <span className="size">30см</span>
             </div>
             <div className={s.ingredients}>{pizza.ingredients.join(', ')}</div>
         </div>

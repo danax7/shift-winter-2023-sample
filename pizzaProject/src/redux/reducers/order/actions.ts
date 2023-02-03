@@ -2,7 +2,14 @@ import { IOrderFormValues } from '@pages/order/OrderForm/types'
 import { instance } from '@utils/api/axios'
 import { AxiosResponse } from 'axios'
 import { IPizzaOrder } from 'src/utils/mainTypes/types'
-import { DECREASE_PIZZA_QUANTITY, INCREASE_PIZZA_QUANTITY, REMOVE_PIZZA_ORDER, SUCCESS_ORDER } from './actionTypes'
+import {
+    DECREASE_PIZZA_QUANTITY,
+    INCREASE_PIZZA_QUANTITY,
+    REMOVE_PIZZA_ORDER,
+    SET_PIZZA_CRUST,
+    SET_PIZZA_SIZE,
+    SUCCESS_ORDER
+} from './actionTypes'
 import { IBackPizzaOrder, IOrderForm } from './types'
 import { DispatchType } from '@redux/store'
 
@@ -15,6 +22,16 @@ export const increasePizzaQuantity = (id: number) => ({
 export const decreasePizzaQuantity = (id: number) => ({
     type: DECREASE_PIZZA_QUANTITY,
     payload: id
+})
+
+export const setPizzaCrust = (id: number, crust: string) => ({
+    type: SET_PIZZA_CRUST,
+    payload: { id, crust }
+})
+
+export const setPizzaSize = (id: number, size: string) => ({
+    type: SET_PIZZA_SIZE,
+    payload: { id, size }
 })
 
 export const removePizzaOrder = (id: number) => ({
@@ -45,8 +62,8 @@ export const sendPizzaOrder = (formValues: IOrderFormValues, pizzas: IPizzaOrder
 
     const pizzasData: IBackPizzaOrder[] = pizzas.map((card: IPizzaOrder) => ({
         id: card.pizza.id,
-        size: 'large',
-        crust: ''
+        size: card.size,
+        crust: card.crust
     }))
 
     return async (dispatch: DispatchType) => {

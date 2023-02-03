@@ -5,6 +5,8 @@ export interface IOrderPizzaDispatchProps {
     getSinglePizza: (id: number) => void
     increaseQuantity: (id: number) => void
     decreaseQuantity: (id: number) => void
+    setPizzaCrust: (id: number, crust: string) => void
+    setPizzaSize: (id: number, size: string) => void
     removePizzaOrder: (id: number) => void
     createOrder: (form: IOrderFormValues, pizzas: IPizzaOrder[]) => void
 }

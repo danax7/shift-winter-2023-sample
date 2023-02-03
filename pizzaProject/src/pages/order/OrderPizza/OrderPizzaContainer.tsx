@@ -7,7 +7,9 @@ import {
     decreasePizzaQuantity,
     increasePizzaQuantity,
     removePizzaOrder,
-    sendPizzaOrder
+    sendPizzaOrder,
+    setPizzaCrust,
+    setPizzaSize
 } from '@redux/reducers/order/actions'
 import { getSinglePizza } from '@redux/reducers/select/actions'
 import { StateType } from '@redux/store'
@@ -23,6 +25,8 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<StateType, void, IAction>) =
         getSinglePizza: (id: number) => dispatch(getSinglePizza(id)),
         increaseQuantity: (id: number) => dispatch(increasePizzaQuantity(id)),
         decreaseQuantity: (id: number) => dispatch(decreasePizzaQuantity(id)),
+        setPizzaCrust: (id: number, crust: string) => dispatch(setPizzaCrust(id, crust)),
+        setPizzaSize: (id: number, size: string) => dispatch(setPizzaSize(id, size)),
         removePizzaOrder: (id: number) => dispatch(removePizzaOrder(id)),
         createOrder: (form: IOrderFormValues, pizzas: IPizzaOrder[]) => dispatch(sendPizzaOrder(form, pizzas))
     }

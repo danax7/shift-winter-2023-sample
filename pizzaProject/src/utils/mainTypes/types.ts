@@ -3,6 +3,11 @@ export interface IAction {
     payload?: any
 }
 
+export interface ICrust extends ISignature<number> {
+    cheesy: number
+    cheesySausage: number
+}
+
 export interface IPizza {
     id: number
     name: string
@@ -15,10 +20,7 @@ export interface IPizza {
             medium: number
             large: number
         }
-        crust?: {
-            cheesy: number
-            cheesySausage: number
-        }
+        crust?: ICrust
     }
     classifications: {
         new: boolean
@@ -27,8 +29,14 @@ export interface IPizza {
     }
 }
 
-export interface IPizzaOrder {
+export interface IPizzaOrder extends ISignature<IPizza | number | string> {
     pizza: IPizza
     quantity: number
     price: number
+    size: string
+    crust: string
+}
+
+export interface ISignature<T> {
+    [key: string]: T
 }
