@@ -18,7 +18,9 @@ export const getPizzas = () => {
         const result = await instance.get<string, AxiosResponse<IPizza[]>>('')
 
         dispatch(setPizzas(result.data))
-        dispatch(setLoaded())
+        setTimeout(() => {
+            dispatch(setLoaded())
+        }, 500)
     }
 }
 

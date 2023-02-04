@@ -10,4 +10,5 @@ export interface IPizzaListProps {
     pizzas: IPizza[]
     selectedPizzas: number[]
     togglePizza: (id: number) => void
+    isLoaded: boolean
 }

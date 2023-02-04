@@ -20,10 +20,12 @@ const SelectPizza = (props: ISelectPizzaProps) => {
                 <div className="box">
                     <h1 className="title">Выбрать пиццу</h1>
                     <Categories categories={categories} currentCategory={currentCategory} />
-                    {isLoaded && (
-                        <PizzaList pizzas={pizzas} togglePizza={togglePizza} selectedPizzas={selectedPizzas} />
-                    )}
-                    {!isLoaded && <div className={s.loading}>Подождите, пиццы уже в пути...</div>}
+                    <PizzaList
+                        pizzas={pizzas}
+                        togglePizza={togglePizza}
+                        selectedPizzas={selectedPizzas}
+                        isLoaded={isLoaded}
+                    />
                 </div>
             </div>
             <FooterComponent />
