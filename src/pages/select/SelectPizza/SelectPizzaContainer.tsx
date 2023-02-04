@@ -1,6 +1,6 @@
+import { IAction } from '@utils/types/types'
 import { connect } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
-import { IAction } from 'src/utils/mainTypes/types'
 import SelectPizza from './SelectPizza'
 import { getPizzas, togglePizza } from '@redux/reducers/select/actions'
 import { StateType } from '@redux/store'

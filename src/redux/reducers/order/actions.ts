@@ -1,7 +1,7 @@
 import { IOrderFormValues } from '@pages/order/OrderForm/types'
 import { instance } from '@utils/api/axios'
+import { IPizzaOrder } from '@utils/types/types'
 import { AxiosResponse } from 'axios'
-import { IPizzaOrder } from 'src/utils/mainTypes/types'
 import {
     DECREASE_PIZZA_QUANTITY,
     INCREASE_PIZZA_QUANTITY,

@@ -1,4 +1,4 @@
-import { IPizzaOrder } from 'src/utils/mainTypes/types'
+import { IPizzaOrder } from '@utils/types/types'
 
 export interface IFormSignature<T> {
     [key: string]: T

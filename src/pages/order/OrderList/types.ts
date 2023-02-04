@@ -1,4 +1,4 @@
-import { IPizzaOrder } from 'src/utils/mainTypes/types'
+import { IPizzaOrder } from '@utils/types/types'
 import { IOrderPizzaDispatchProps } from '../OrderPizza/types'
 
 export interface IOrderListProps {

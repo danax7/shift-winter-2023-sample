@@ -1,6 +1,6 @@
+import { IAction, IPizzaOrder } from '@utils/types/types'
 import { connect } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
-import { IAction, IPizzaOrder } from 'src/utils/mainTypes/types'
 import { IOrderFormValues } from '../OrderForm/types'
 import OrderPizza from './OrderPizza'
 import {

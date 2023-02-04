@@ -1,4 +1,4 @@
-import { IAction } from 'src/utils/mainTypes/types'
+import { IAction } from '@utils/types/types'
 import { SET_SINGLE_PIZZA } from '../select/actionTypes'
 import {
     DECREASE_PIZZA_QUANTITY,
