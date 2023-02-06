@@ -17,7 +17,7 @@ const PizzaCard = ({ pizza, isSelected, togglePizza }: IPizzaCardProps) => {
                         alt="фото"
                         onLoad={() => setImgLoading(false)}
                     />
-                    {imgLoading && <PizzaImgSkeleton />}
+                    {/* {imgLoading && <PizzaImgSkeleton />} */}
                 </div>
                 <div className={s.info}>
                     <span className="name">{pizza.name}</span>

@@ -6,7 +6,7 @@ import s from './s.module.css'
 
 const OrderForm = ({ onOrderSubmit, orderedPizzas }: IOrderFormProps) => {
     const formik = useFormik({
-        validateOnChange: false,
+        validateOnChange: true,
         initialValues: defaultValues,
         onSubmit: (values: IOrderFormValues) => {
             onOrderSubmit(values, orderedPizzas)

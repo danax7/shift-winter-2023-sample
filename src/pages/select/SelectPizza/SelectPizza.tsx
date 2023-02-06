@@ -9,6 +9,8 @@ import s from './s.module.css'
 const SelectPizza = (props: ISelectPizzaProps) => {
     const { getPizzas, togglePizza, pizzas, categories, currentCategory, isLoaded, selectedPizzas } = props
 
+    const a = 2
+
     useEffect(() => {
         getPizzas()
     }, [])

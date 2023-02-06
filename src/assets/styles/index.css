@@ -4,7 +4,7 @@
 :root {
   --orange: #F6B716;
   --orange-hover: #cc9711;
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
 }
 
 #root {
